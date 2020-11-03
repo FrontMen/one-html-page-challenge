@@ -2,10 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>One HTML Page Challenge</title>
+        <title>One HTML Page Challenge - Frontmen</title>
 
         <!-- Icons -->
-
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <!-- Favicon -->
         <link rel="shortcut icon" href="./meta/favicon.ico" />
 
@@ -47,28 +47,47 @@
         <meta name="theme-color" content="#ffffff" />
         <link rel="mask-icon" href="./meta/safari-pinned-tab.svg" color="#ffa500" />
 
+
         <!-- END Icons -->
 
         <meta property="og:title" content="One HTML Page Challenge" />
+
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <meta property="og:image" content="https://repository-images.githubusercontent.com/194445383/571a9000-9cd0-11e9-9a72-2faf76647a01" />
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
         <style>
             .jumbotron {
                 text-align: center;
+                background-color: #FF5900;
+                color: #ffffff;
             }
 
             .logo {
                 max-width: 70%;
+                filter: brightness(10);
             }
 
-            body.bg {
-                background: linear-gradient(236deg, #ff5900, #00cccc, #201e33);
-                background-size: 600% 600%;
+            .my-4 {
+                border-color: #fff;
+            }
 
-                -webkit-animation: GradientAnim 30s ease infinite;
-                -moz-animation: GradientAnim 30s ease infinite;
-                animation: GradientAnim 30s ease infinite;
+            .my-3 {
+                border-color: #ff5900;
+            }
+
+
+            body.bg {
+                padding: 2em;
+                background: linear-gradient(230deg, #ff5900 40%, #00cccc 60%, #201e33 80%);
+                background-size: 600% 600%;
+                font-family: 'VT323', monospace;
+                font-size: 1.5em;
+
+                -webkit-animation: GradientAnim 40s ease infinite;
+                -moz-animation: GradientAnim 40s ease infinite;
+                animation: GradientAnim 40s ease infinite;
+
             }
 
             @-webkit-keyframes GradientAnim {
@@ -93,59 +112,265 @@
                 margin-right: 0.5em;
             }
 
+            .input-group {
+                height: 2em;
+            }
+
+            .input-group img {
+                height: 100%;
+                filter: invert(1);
+            }
+
+            .input-group-text {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                max-width: 4em;
+                border-color: #ff5900;
+                background-color: #ff5900;
+            }
+
+            .form-control {
+                height: 100%;
+                border-color: #ff5900;
+            }
+
+            .card {
+                border-color: #ff5900;
+            }
+
+            section.card {
+                border-color: transparent;
+            }
+
             .btn.btn-success {
                 color: #ffffff;
                 background-color: hotpink;
                 border-color: hotpink;
             }
 
+
+            .btn-primary {
+                background-color: #00cccc;
+                border-color: #00cccc;
+                position: relative;
+                box-shadow: -18px 0px 0px -10px #00cccc, 18px 0px 0px -10px #00cccc, 27px 0px 0px -16px #00cccc, -27px 0px 0px -16px #00cccc;
+                border-radius: 0;
+                transition: all .5s ease-in;
+            }
+
+            .btn-primary:before {
+                top: 10%;
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 80%;
+                background-color: #00cccc;
+                left: -5px;
+                transition: all .5s ease-in;
+            }
+
+            .btn-primary:after {
+                top: 10%;
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 80%;
+                background-color: #00cccc;
+                right: -5px;
+                transition: all .5s ease-in;
+            }
+
+            .btn-secondary {
+                background-color: #201E33;
+                border-color: #201E33;
+                position: relative;
+                box-shadow: -18px 0px 0px -10px #201E33, 18px 0px 0px -10px #201E33, 27px 0px 0px -16px #201E33, -27px 0px 0px -16px #201E33;
+                border-radius: 0;
+                transition: all .5s ease-in;
+            }
+
+            .btn-secondary:before {
+                top: 10%;
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 80%;
+                background-color: #201E33;
+                left: -5px;
+                transition: all .5s ease-in;
+            }
+
+            .btn-secondary:after {
+                top: 10%;
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 80%;
+                background-color: #201E33;
+                right: -5px;
+                transition: all .5s ease-in;
+            }
+
+            .btn.btn-primary:hover,
+            .btn.btn-primary:focus,
+            .btn.btn-primary:active,
+            .btn.btn-primary.active,
             .btn.btn-success:hover,
             .btn.btn-success:focus,
             .btn.btn-success:active,
             .btn.btn-success.active {
-                color: #ffffff;
-                background-color: deeppink;
-                border-color: deeppink;
+                background-color: #201E33 !important;
+                border-color: #201E33 !important;
+                position: relative;
+                box-shadow: -18px 0px 0px -10px #201E33, 18px 0px 0px -10px #201E33, 27px 0px 0px -16px #201E33, -27px 0px 0px -16px #201E33;
+                border-radius: 0;
+            }
+
+            .btn-primary:hover:before,
+            .btn.btn-primary:focus:before,
+            .btn.btn-primary:active:before {
+                top: 10%;
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 80%;
+                background-color: #201E33 !important;
+                left: -5px;
+            }
+
+            .btn-primary:hover:after,
+            .btn.btn-primary:focus:after,
+            .btn.btn-primary:active:after {
+                top: 10%;
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 80%;
+                background-color: #201E33 !important;
+                right: -5px;
+            }
+
+            .btn.btn-secondary:hover,
+            .btn.btn-secondary:focus,
+            .btn.btn-secondary:active,
+            .btn.btn-secondary.active {
+                color: #201E33;
+                background-color: #ccc !important;
+                border-color: #ccc !important;
+                position: relative;
+                box-shadow: -18px 0px 0px -10px #ccc, 18px 0px 0px -10px #ccc, 27px 0px 0px -16px #ccc, -27px 0px 0px -16px #ccc;
+                border-radius: 0;
+            }
+
+            .btn-secondary:hover:before,
+            .btn.btn-secondary:focus:before,
+            .btn.btn-secondary:active:before {
+                top: 10%;
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 80%;
+                background-color: #ccc !important;
+                left: -5px;
+            }
+
+            .btn-secondary:hover:after,
+            .btn.btn-secondary:focus:after,
+            .btn.btn-secondary:active:after {
+                top: 10%;
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 80%;
+                background-color: #ccc !important;
+                right: -5px;
+            }
+
+            .btn-toolbar {
+                justify-content: space-evenly;
+            }
+
+            .text-right {
+                color: white;
+            }
+
+            .text-right a {
+                color: white;
+            }
+
+            article, aside {
+                margin-bottom: 2em;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            @media only screen and (max-width: 600px) {
+                body.bg {
+                    padding: 0;
+                    font-size: 1em;
+                }
+
+                .container {
+                    padding: 0;
+                }
+
+                .btn-toolbar {
+                    flex-direction: column;
+                }
+
+                .btn-toolbar .btn-group {
+                    margin-bottom: 1em;
+                }
             }
         </style>
     </head>
     <body class="bg">
-        <div class="container">
-            <br />
-
-            <div class="card">
+        <main class="container">
+            <section class="card">
                 <div class="card-body">
-                    <div class="jumbotron">
-                        <img src="./meta/one-html-page-logo.png" alt="One Html Page Challenge" class="logo" />
-                        <hr class="my-4" />
-                        <p>
-                            The goal is to create anything you want within 1 single html file. Practice your skills with no assistance from libraries, no separation of files, and no assistance of a modern framework.
-                            <b>How creative can you be with such restrictions?</b>
-                        </p>
-                        <a class="btn btn-primary btn-lg" href="https://github.com/FrontMen/one-html-page-challenge/blob/master/README.md#how-to-submit" role="button">Submit an Entry</a>
-                        <h2>Prizes</h2>
-                        <p>Submit your contributions before December 31st to win prizes</p>
-                        <p>The jury will score all submitted projects and select a <b>winner</b>.</p>
-                        <h3>The Jury</h3>
-                        <uL>
-                            <li>Sylvia Blok</li>
-                            <li>Matthias de Boer</li>
-                            <li>Jeroen Groothoff</li>
-                        </uL>
-
-                            
-                    </div>
+                    <section class="jumbotron">
+                        <header>
+                            <img src="./meta/one-html-page-logo.png" alt="One Html Page Challenge" class="logo" />
+                            <hr class="my-4" />
+                        </header>
+                        <article>
+                            <p>
+                                The goal is to create anything you want within 1 single html file. Practice your skills with no assistance from libraries, no separation of files, and no assistance of a modern framework.
+                                <b>How creative can you be with such restrictions?</b>
+                            </p>
+                        </article>
+                        <aside>
+                            <a class="btn btn-primary btn-lg" href="https://github.com/FrontMen/one-html-page-challenge/blob/master/README.md#how-to-submit" role="button">Submit an Entry</a>
+                        </aside>
+                       <article>
+                           <h2>Prizes</h2>
+                           <p>Submit your contributions before December 31st to win prizes.
+                               The jury will score all submitted projects and select a <b>winner</b>.
+                           </p>
+                           <h3>The Jury</h3>
+                           <uL>
+                               <li>Sylvia "Multi-threader" Blok</li>
+                               <li>Matthias "Uren" de Boer</li>
+                               <li>Jeroen "Use the (Sales)Force" Groothoff</li>
+                           </uL>
+                       </article>
+                    </section>
                     <div class="input-group flex-nowrap">
                         <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="addon-wrapping" id="search" oninput="searchOnInput()" />
                         <div class="input-group-append">
-                            <span class="input-group-text" id="addon-wrapping">🔍</span>
+                            <span class="input-group-text" id="addon-wrapping">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAA0dJREFUeJzt3THLlWUcx/Gf+gRKgzWGgkIJEg7qUA3ia/AFRFNjY0NDL0CksTfQO6jJFqXZTYi0dHAWBcEGl3ganPuF13U6l3fP5wNn/HP978P5wj3cz3MnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8u2OrF1jkbJLzq5cY8DzJg9VL8P/3TZLDDX5+/C++DP7Z8dULwNtMIFAIBAqBQCEQKAQChUCgEAgUAoFCIFAIBAqBQCEQKAQCxcHqBSbcSXJucPaHJBd2uMu+XE3yeGL+SpKXO9rlSNhyIOeSfDg4+27mfmirXMr4NSfJiV0tclS4xYJCIFAIBAqBQCEQKAQChUCgEAgUAoFCIFAIBAqBQCEQKFa+/uBsks8n5t/J66dyR/yS5OeJs1f5OMkXE/PPMv4E990k9ybO5g1dy9yrAD7a/8qb9yLj3/fXC/Zdzi0WFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCASKg4VnP0/y08T81SSXBmf/SPLbxNmrfJDk04n520lODc4+mjiXBR4nORz83Fyw7y7cyPg1HyZ5b/8rb5tbLCgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQrPx7kFlXkpwYnP0yyYsd7rIvt5O8PzF/P8npwdlvk3w/cfYmbTmQlxOzBxn/oax0KnNhn874dZ+cOHez3GJBIRAoBAKFQKAQCBQCgUIgUAgECoFAIRAoBAKFQKAQCBTHVi+wyCdJrq9eYsCjzL0y4quMP5X7V5Izg7NPk9wanIVN+C7jr114uGDfnXCLBYVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQbPmfV7NfT5P8Pjj7JMnFibOfJHk1MQ9vtYsZf1T+MMln+1/5NbdYUAgECoFAIRAoBAKFQKAQCBQCgUIgUAgECoFAIRAoBAKFQKA4qq8/YL9OJrk8Mf9rkj93tAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADv3N1QfrvVma6YVAAAAAElFTkSuQmCC" alt="">
+                            </span>
                         </div>
                     </div>
                     <div id="list"></div>
                 </div>
-            </div>
+            </section>
             <p class="text-right">Project inspired on  <a href="https://onehtmlpagechallenge.com" rel="nofollow">One HTML Page Challenge</a> by <a href="https://github.com/Metroxe/one-html-page-challenge" rel="nofollow">Metroxe</a></p>
-        </div>
+        </main>
         <br />
 
         <script src="./entries.js"></script>
@@ -184,6 +409,7 @@
                 filteredEntries.forEach(({ title, description, filename, github, author, compatibleBrowsers, sponsored }) => {
                     // horizontal rule
                     const hr = document.createElement("hr");
+                    hr.classList.add('my-3');
                     list.appendChild(hr);
 
                     const card = document.createElement("div");
@@ -243,11 +469,14 @@
                     const toolbar = document.createElement("div");
                     const group1 = document.createElement("div");
                     const group2 = document.createElement("div");
+                    const group3 = document.createElement("div");
                     toolbar.className = "btn-toolbar";
                     group1.className = "btn-group mr-2";
                     group2.className = "btn-group mr-2";
+                    group3.className = "btn-group mr-2";
                     toolbar.appendChild(group1);
                     toolbar.appendChild(group2);
+                    toolbar.appendChild(group3);
                     body.appendChild(toolbar);
 
                     // HTML Link
@@ -264,7 +493,7 @@
                     sourceCodeButton.className = "btn btn-secondary btn-md";
                     sourceCodeButton.href = `https://github.com/FrontMen/one-html-page-challenge/blob/master/entries/${filename}`;
                     sourceCodeButton.appendChild(sourceCodeNode);
-                    group1.appendChild(sourceCodeButton);
+                    group2.appendChild(sourceCodeButton);
 
                     // github button
                     if (github) {
@@ -273,7 +502,7 @@
                         githubButton.className = "btn btn-primary btn-md";
                         githubButton.href = `https://github.com/${github}`;
                         githubButton.appendChild(githubButtonNode);
-                        group2.appendChild(githubButton);
+                        group3.appendChild(githubButton);
                     }
                     list.appendChild(card);
                 });
