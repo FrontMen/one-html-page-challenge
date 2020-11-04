@@ -416,6 +416,42 @@
         list-style: none;
       }
 
+      .prizes {
+        display: flex;
+      }
+
+      .prizes .card {
+        max-width: 33.33%;
+      }
+
+      .watch {
+        text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+        color: #fff6a9;
+        text-align: center;
+        animation: blink 12s infinite;
+      }
+
+      @keyframes blink {
+        20%,
+        24%,
+        55% {
+          color: #111;
+          text-shadow: none;
+        }
+
+        0%,
+        19%,
+        21%,
+        23%,
+        25%,
+        54%,
+        56%,
+        100% {
+          text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+          color: #fff6a9;
+        }
+      }
+
       @media only screen and (max-width: 600px) {
         body.bg {
           padding: 0;
@@ -426,6 +462,23 @@
           padding: 0;
         }
 
+        .prizes {
+          flex-direction: column;
+        }
+
+        .prizes .card {
+          max-width: 100%;
+          justify-content: center;
+          align-items: center;
+          padding: 1em;
+        }
+
+
+        .prizes .card img {
+          width: 50%;
+          border-radius: 5px;
+        }
+
         .btn-toolbar {
           flex-direction: column;
         }
@@ -434,6 +487,7 @@
           margin-bottom: 1em;
         }
       }
+
     </style>
   </head>
   <body class="bg">
@@ -456,7 +510,7 @@
                 Pandemic we thought it might be time to do something fun again.
                 So we came up with an awesome challenge! And with an awesome
                 challenge we should get an awesome prize as well. Therefore for
-                the winner of this challenge will get an <b>Apple Watch</b>
+                the winner of this challenge will get an <b class="watch">Apple Watch!</b>
               </p>
 
               <p>
@@ -489,45 +543,44 @@
               </ul>
               </article>
               <article>
-              <h3>Prizes</h3>
-              <p>Be lucky, and win one of the carefully selected prizes!</p>
-              <div class="d-flex flex-md-row flex-column justify-content-around
-              align-items-center">
-                <div class="card order-1 order-md-0" style="width: 16rem">
-                  <img
-                    src="./meta/ostrich_pillow.jpg"
-                    class="card-img-top"
-                    alt="second prize ostrich pillow"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title text-dark">Second</h5>
-                    <p class="card-text text-dark">Ostrich Original Napping Pillow, Immersive cozy experience</p>
+                <h3>Prizes</h3>
+                <p>Be lucky, and win one of the carefully selected prizes!</p>
+                <div class="prizes">
+                  <div class="card" >
+                    <img
+                            src="./meta/apple_watch.jpg"
+                            class="card-img-top"
+                            alt="first prize apple watch"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title text-orange">First</h5>
+                      <p class="card-text text-dark">Apple Watch SE, Space Gray Aluminum Case with Sport Band 40 mm</p>
+                    </div>
+                  </div>
+                  <div class="card" >
+                    <img
+                      src="./meta/ostrich_pillow.jpg"
+                      class="card-img-top"
+                      alt="second prize ostrich pillow"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title text-dark">Second</h5>
+                      <p class="card-text text-dark">Ostrich Original Napping Pillow, Immersive cozy experience</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <img
+                      src="./meta/coders_book.jpg"
+                      class="card-img-top"
+                      alt="third prize book: coders"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title text-dark">Third</h5>
+                      <p class="card-text text-dark">Coders: Who They Are, What They Think and How They Are Changing Our World</p>
+                    </div>
                   </div>
                 </div>
-                <div class="card order-0 order-md-1" style="width: 20rem">
-                  <img
-                    src="./meta/apple_watch.jpg"
-                    class="card-img-top"
-                    alt="first prize apple watch"
-                  />
-                  <div class="card-body">
-                    <h3 class="card-title text-orange">First</h5>
-                    <p class="card-text text-dark">Apple Watch SE, Space Gray Aluminum Case with Sport Band 40 mm</p>
-                  </div>
-                </div>
-                <div class="card order-2 order-md-2" style="width: 16rem">
-                  <img
-                    src="./meta/coders_book.jpg"
-                    class="card-img-top"
-                    alt="third prize book: coders"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title text-dark">Third</h5>
-                    <p class="card-text text-dark">Coders: Who They Are, What They Think and How They Are Changing Our World</p>
-                  </div>
-                </div>
-              </div>
-            </article>
+              </article>
           </section>
           <div class="input-group flex-nowrap">
             <input
