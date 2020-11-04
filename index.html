@@ -1,518 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>One HTML Page Challenge - Frontmen</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>One HTML Page Challenge - Frontmen</title>
 
-        <!-- Icons -->
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="./meta/favicon.ico" />
+    <!-- Icons -->
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./meta/favicon.ico" />
 
-        <!-- Apple/Safari icon -->
-        <link rel="apple-touch-icon" sizes="57x57" href="./meta/apple-icon-57x57.png" />
-        <link rel="apple-touch-icon" sizes="60x60" href="./meta/apple-icon-60x60.png" />
-        <link rel="apple-touch-icon" sizes="72x72" href="./meta/apple-icon-72x72.png" />
-        <link rel="apple-touch-icon" sizes="76x76" href="./meta/apple-icon-76x76.png" />
-        <link rel="apple-touch-icon" sizes="114x114" href="./meta/apple-icon-114x114.png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="./meta/apple-icon-120x120.png" />
-        <link rel="apple-touch-icon" sizes="144x144" href="./meta/apple-icon-144x144.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="./meta/apple-icon-152x152.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="./meta/apple-icon-180x180.png" />
+    <!-- Apple/Safari icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./meta/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./meta/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./meta/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./meta/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./meta/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./meta/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./meta/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./meta/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./meta/apple-icon-180x180.png"
+    />
 
-        <!-- Android Chrome -->
-        <link rel="icon" type="image/png" sizes="192x192" href="./meta/android-icon-192x192.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="./meta/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="./meta/favicon-96x96.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="./meta/favicon-16x16.png" />
+    <!-- Android Chrome -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./meta/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./meta/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./meta/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./meta/favicon-16x16.png"
+    />
 
-        <!-- Square Windows tiles -->
-        <meta name="msapplication-square70x70logo" content="./meta/ms-icon-70x70.png" />
-        <meta name="msapplication-square144x144logo" content="./meta/ms-icon-144x144.png" />
-        <meta name="msapplication-square150x150logo" content="./meta/ms-icon-150x150.png" />
-        <meta name="msapplication-square310x310logo" content="./meta/ms-icon-310x310.png" />
+    <!-- Square Windows tiles -->
+    <meta
+      name="msapplication-square70x70logo"
+      content="./meta/ms-icon-70x70.png"
+    />
+    <meta
+      name="msapplication-square144x144logo"
+      content="./meta/ms-icon-144x144.png"
+    />
+    <meta
+      name="msapplication-square150x150logo"
+      content="./meta/ms-icon-150x150.png"
+    />
+    <meta
+      name="msapplication-square310x310logo"
+      content="./meta/ms-icon-310x310.png"
+    />
 
-        <!-- Rectangular Windows tile -->
-        <meta name="msapplication-wide310x150logo" content="./meta/ms-icon-310x150.png" />
+    <!-- Rectangular Windows tile -->
+    <meta
+      name="msapplication-wide310x150logo"
+      content="./meta/ms-icon-310x150.png"
+    />
 
-        <!-- Web App Manifest -->
-        <link rel="manifest" href="./meta/site.webmanifest" />
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="./meta/site.webmanifest" />
 
-        <!-- Windows tile theme color -->
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="msapplication-TileImage" content="./meta/ms-icon-144x144.png" />
-        <meta name="msapplication-config" content="./meta/browserconfig.config" />
+    <!-- Windows tile theme color -->
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-TileImage" content="./meta/ms-icon-144x144.png" />
+    <meta name="msapplication-config" content="./meta/browserconfig.config" />
 
-        <!-- Android theme color -->
-        <meta name="theme-color" content="#ffffff" />
-        <link rel="mask-icon" href="./meta/safari-pinned-tab.svg" color="#ffa500" />
+    <!-- Android theme color -->
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="mask-icon" href="./meta/safari-pinned-tab.svg" color="#ffa500" />
 
+    <!-- END Icons -->
 
-        <!-- END Icons -->
+    <meta property="og:title" content="One HTML Page Challenge" />
 
-        <meta property="og:title" content="One HTML Page Challenge" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/194445383/571a9000-9cd0-11e9-9a72-2faf76647a01"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
-        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-        <meta property="og:image" content="https://repository-images.githubusercontent.com/194445383/571a9000-9cd0-11e9-9a72-2faf76647a01" />
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <style>
+      .jumbotron {
+        text-align: center;
+        background-color: #ff5900;
+        color: #ffffff;
+      }
 
-        <style>
-            .jumbotron {
-                text-align: center;
-                background-color: #FF5900;
-                color: #ffffff;
-            }
+      .logo {
+        max-width: 70%;
+        filter: brightness(10);
+      }
 
-            .logo {
-                max-width: 70%;
-                filter: brightness(10);
-            }
+      .my-4 {
+        border-color: #fff;
+      }
 
-            .my-4 {
-                border-color: #fff;
-            }
+      .my-3 {
+        border-color: #ff5900;
+      }
 
-            .my-3 {
-                border-color: #ff5900;
-            }
+      body.bg {
+        padding: 2em;
+        background: linear-gradient(
+          230deg,
+          #ff5900 40%,
+          #00cccc 60%,
+          #201e33 80%
+        );
+        background-size: 600% 600%;
+        font-family: "VT323", monospace;
+        font-size: 1.5em;
 
+        -webkit-animation: GradientAnim 40s ease infinite;
+        -moz-animation: GradientAnim 40s ease infinite;
+        animation: GradientAnim 40s ease infinite;
+      }
 
-            body.bg {
-                padding: 2em;
-                background: linear-gradient(230deg, #ff5900 40%, #00cccc 60%, #201e33 80%);
-                background-size: 600% 600%;
-                font-family: 'VT323', monospace;
-                font-size: 1.5em;
+      @-webkit-keyframes GradientAnim {
+        0% {
+          background-position: 0% 90%;
+        }
+        50% {
+          background-position: 100% 11%;
+        }
+        100% {
+          background-position: 0% 90%;
+        }
+      }
+      @-moz-keyframes GradientAnim {
+        0% {
+          background-position: 0% 90%;
+        }
+        50% {
+          background-position: 100% 11%;
+        }
+        100% {
+          background-position: 0% 90%;
+        }
+      }
+      @keyframes GradientAnim {
+        0% {
+          background-position: 0% 90%;
+        }
+        50% {
+          background-position: 100% 11%;
+        }
+        100% {
+          background-position: 0% 90%;
+        }
+      }
 
-                -webkit-animation: GradientAnim 40s ease infinite;
-                -moz-animation: GradientAnim 40s ease infinite;
-                animation: GradientAnim 40s ease infinite;
+      .card-text:nth-of-type(2)::before {
+        display: inline-block;
+        content: "Supported in:";
+        margin-right: 0.5em;
+      }
 
-            }
+      .input-group {
+        height: 2em;
+      }
 
-            @-webkit-keyframes GradientAnim {
-                0%{background-position:0% 90%}
-                50%{background-position:100% 11%}
-                100%{background-position:0% 90%}
-            }
-            @-moz-keyframes GradientAnim {
-                0%{background-position:0% 90%}
-                50%{background-position:100% 11%}
-                100%{background-position:0% 90%}
-            }
-            @keyframes GradientAnim {
-                0%{background-position:0% 90%}
-                50%{background-position:100% 11%}
-                100%{background-position:0% 90%}
-            }
+      .input-group img {
+        height: 100%;
+        filter: invert(1);
+      }
 
-            .card-text:nth-of-type(2)::before {
-                display: inline-block;
-                content: "Supported in:";
-                margin-right: 0.5em;
-            }
+      .input-group-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 4em;
+        border-color: #ff5900;
+        background-color: #ff5900;
+      }
 
-            .input-group {
-                height: 2em;
-            }
+      .form-control {
+        height: 100%;
+        border-color: #ff5900;
+      }
 
-            .input-group img {
-                height: 100%;
-                filter: invert(1);
-            }
+      .card {
+        border-color: #ff5900;
+      }
 
-            .input-group-text {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                max-width: 4em;
-                border-color: #ff5900;
-                background-color: #ff5900;
-            }
+      section.card {
+        border-color: transparent;
+      }
 
-            .form-control {
-                height: 100%;
-                border-color: #ff5900;
-            }
+      .btn.btn-success {
+        color: #ffffff;
+        background-color: hotpink;
+        border-color: hotpink;
+      }
 
-            .card {
-                border-color: #ff5900;
-            }
+      .btn-primary {
+        background-color: #00cccc;
+        border-color: #00cccc;
+        position: relative;
+        box-shadow: -18px 0px 0px -10px #00cccc, 18px 0px 0px -10px #00cccc,
+          27px 0px 0px -16px #00cccc, -27px 0px 0px -16px #00cccc;
+        border-radius: 0;
+        transition: all 0.5s ease-in;
+      }
 
-            section.card {
-                border-color: transparent;
-            }
+      .btn-primary:before {
+        top: 10%;
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 80%;
+        background-color: #00cccc;
+        left: -5px;
+        transition: all 0.5s ease-in;
+      }
 
-            .btn.btn-success {
-                color: #ffffff;
-                background-color: hotpink;
-                border-color: hotpink;
-            }
+      .btn-primary:after {
+        top: 10%;
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 80%;
+        background-color: #00cccc;
+        right: -5px;
+        transition: all 0.5s ease-in;
+      }
 
+      .btn-secondary {
+        background-color: #201e33;
+        border-color: #201e33;
+        position: relative;
+        box-shadow: -18px 0px 0px -10px #201e33, 18px 0px 0px -10px #201e33,
+          27px 0px 0px -16px #201e33, -27px 0px 0px -16px #201e33;
+        border-radius: 0;
+        transition: all 0.5s ease-in;
+      }
 
-            .btn-primary {
-                background-color: #00cccc;
-                border-color: #00cccc;
-                position: relative;
-                box-shadow: -18px 0px 0px -10px #00cccc, 18px 0px 0px -10px #00cccc, 27px 0px 0px -16px #00cccc, -27px 0px 0px -16px #00cccc;
-                border-radius: 0;
-                transition: all .5s ease-in;
-            }
+      .btn-secondary:before {
+        top: 10%;
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 80%;
+        background-color: #201e33;
+        left: -5px;
+        transition: all 0.5s ease-in;
+      }
 
-            .btn-primary:before {
-                top: 10%;
-                content: '';
-                position: absolute;
-                width: 10px;
-                height: 80%;
-                background-color: #00cccc;
-                left: -5px;
-                transition: all .5s ease-in;
-            }
+      .btn-secondary:after {
+        top: 10%;
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 80%;
+        background-color: #201e33;
+        right: -5px;
+        transition: all 0.5s ease-in;
+      }
 
-            .btn-primary:after {
-                top: 10%;
-                content: '';
-                position: absolute;
-                width: 10px;
-                height: 80%;
-                background-color: #00cccc;
-                right: -5px;
-                transition: all .5s ease-in;
-            }
+      .btn.btn-primary:hover,
+      .btn.btn-primary:focus,
+      .btn.btn-primary:active,
+      .btn.btn-primary.active,
+      .btn.btn-success:hover,
+      .btn.btn-success:focus,
+      .btn.btn-success:active,
+      .btn.btn-success.active {
+        background-color: #201e33 !important;
+        border-color: #201e33 !important;
+        position: relative;
+        box-shadow: -18px 0px 0px -10px #201e33, 18px 0px 0px -10px #201e33,
+          27px 0px 0px -16px #201e33, -27px 0px 0px -16px #201e33;
+        border-radius: 0;
+      }
 
-            .btn-secondary {
-                background-color: #201E33;
-                border-color: #201E33;
-                position: relative;
-                box-shadow: -18px 0px 0px -10px #201E33, 18px 0px 0px -10px #201E33, 27px 0px 0px -16px #201E33, -27px 0px 0px -16px #201E33;
-                border-radius: 0;
-                transition: all .5s ease-in;
-            }
+      .btn-primary:hover:before,
+      .btn.btn-primary:focus:before,
+      .btn.btn-primary:active:before {
+        top: 10%;
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 80%;
+        background-color: #201e33 !important;
+        left: -5px;
+      }
 
-            .btn-secondary:before {
-                top: 10%;
-                content: '';
-                position: absolute;
-                width: 10px;
-                height: 80%;
-                background-color: #201E33;
-                left: -5px;
-                transition: all .5s ease-in;
-            }
+      .btn-primary:hover:after,
+      .btn.btn-primary:focus:after,
+      .btn.btn-primary:active:after {
+        top: 10%;
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 80%;
+        background-color: #201e33 !important;
+        right: -5px;
+      }
 
-            .btn-secondary:after {
-                top: 10%;
-                content: '';
-                position: absolute;
-                width: 10px;
-                height: 80%;
-                background-color: #201E33;
-                right: -5px;
-                transition: all .5s ease-in;
-            }
+      .btn.btn-secondary:hover,
+      .btn.btn-secondary:focus,
+      .btn.btn-secondary:active,
+      .btn.btn-secondary.active {
+        color: #201e33;
+        background-color: #ccc !important;
+        border-color: #ccc !important;
+        position: relative;
+        box-shadow: -18px 0px 0px -10px #ccc, 18px 0px 0px -10px #ccc,
+          27px 0px 0px -16px #ccc, -27px 0px 0px -16px #ccc;
+        border-radius: 0;
+      }
 
-            .btn.btn-primary:hover,
-            .btn.btn-primary:focus,
-            .btn.btn-primary:active,
-            .btn.btn-primary.active,
-            .btn.btn-success:hover,
-            .btn.btn-success:focus,
-            .btn.btn-success:active,
-            .btn.btn-success.active {
-                background-color: #201E33 !important;
-                border-color: #201E33 !important;
-                position: relative;
-                box-shadow: -18px 0px 0px -10px #201E33, 18px 0px 0px -10px #201E33, 27px 0px 0px -16px #201E33, -27px 0px 0px -16px #201E33;
-                border-radius: 0;
-            }
+      .btn-secondary:hover:before,
+      .btn.btn-secondary:focus:before,
+      .btn.btn-secondary:active:before {
+        top: 10%;
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 80%;
+        background-color: #ccc !important;
+        left: -5px;
+      }
 
-            .btn-primary:hover:before,
-            .btn.btn-primary:focus:before,
-            .btn.btn-primary:active:before {
-                top: 10%;
-                content: '';
-                position: absolute;
-                width: 10px;
-                height: 80%;
-                background-color: #201E33 !important;
-                left: -5px;
-            }
+      .btn-secondary:hover:after,
+      .btn.btn-secondary:focus:after,
+      .btn.btn-secondary:active:after {
+        top: 10%;
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 80%;
+        background-color: #ccc !important;
+        right: -5px;
+      }
 
-            .btn-primary:hover:after,
-            .btn.btn-primary:focus:after,
-            .btn.btn-primary:active:after {
-                top: 10%;
-                content: '';
-                position: absolute;
-                width: 10px;
-                height: 80%;
-                background-color: #201E33 !important;
-                right: -5px;
-            }
+      .btn-toolbar {
+        justify-content: space-evenly;
+      }
 
-            .btn.btn-secondary:hover,
-            .btn.btn-secondary:focus,
-            .btn.btn-secondary:active,
-            .btn.btn-secondary.active {
-                color: #201E33;
-                background-color: #ccc !important;
-                border-color: #ccc !important;
-                position: relative;
-                box-shadow: -18px 0px 0px -10px #ccc, 18px 0px 0px -10px #ccc, 27px 0px 0px -16px #ccc, -27px 0px 0px -16px #ccc;
-                border-radius: 0;
-            }
+      .text-right {
+        color: white;
+      }
 
-            .btn-secondary:hover:before,
-            .btn.btn-secondary:focus:before,
-            .btn.btn-secondary:active:before {
-                top: 10%;
-                content: '';
-                position: absolute;
-                width: 10px;
-                height: 80%;
-                background-color: #ccc !important;
-                left: -5px;
-            }
+      .text-right a {
+        color: white;
+      }
+      .text-orange {
+        color: #ff5900
+      }
 
-            .btn-secondary:hover:after,
-            .btn.btn-secondary:focus:after,
-            .btn.btn-secondary:active:after {
-                top: 10%;
-                content: '';
-                position: absolute;
-                width: 10px;
-                height: 80%;
-                background-color: #ccc !important;
-                right: -5px;
-            }
+      article,
+      aside {
+        margin-bottom: 2em;
+      }
 
-            .btn-toolbar {
-                justify-content: space-evenly;
-            }
+      ul {
+        list-style: none;
+      }
 
-            .text-right {
-                color: white;
-            }
+      @media only screen and (max-width: 600px) {
+        body.bg {
+          padding: 0;
+          font-size: 1em;
+        }
 
-            .text-right a {
-                color: white;
-            }
+        .container {
+          padding: 0;
+        }
 
-            article, aside {
-                margin-bottom: 2em;
-            }
+        .btn-toolbar {
+          flex-direction: column;
+        }
 
-            ul {
-                list-style: none;
-            }
+        .btn-toolbar .btn-group {
+          margin-bottom: 1em;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg">
+    <main class="container">
+      <section class="card">
+        <div class="card-body">
+          <section class="jumbotron">
+            <header>
+              <img
+                src="./meta/one-html-page-logo.png"
+                alt="One Html Page Challenge"
+                class="logo"
+              />
+              <hr class="my-4" />
+            </header>
+            <article>
+              <h2>Intro</h2>
+              <p>
+                Hey FrontPeepz! While we are still in this long and gruesome
+                Pandemic we thought it might be time to do something fun again.
+                So we came up with an awesome challenge! And with an awesome
+                challenge we should get an awesome prize as well. Therefore for
+                the winner of this challenge will get an <b>Apple Watch</b>
+              </p>
 
-            @media only screen and (max-width: 600px) {
-                body.bg {
-                    padding: 0;
-                    font-size: 1em;
-                }
-
-                .container {
-                    padding: 0;
-                }
-
-                .btn-toolbar {
-                    flex-direction: column;
-                }
-
-                .btn-toolbar .btn-group {
-                    margin-bottom: 1em;
-                }
-            }
-        </style>
-    </head>
-    <body class="bg">
-        <main class="container">
-            <section class="card">
-                <div class="card-body">
-                    <section class="jumbotron">
-                        <header>
-                            <img src="./meta/one-html-page-logo.png" alt="One Html Page Challenge" class="logo" />
-                            <hr class="my-4" />
-                        </header>
-                        <article>
-                            <h2>Intro</h2>
-                            <p>
-                                Hey FrontPeepz! While we are still in this long and gruesome Pandemic we thought it might be time to do something fun again.
-                                So we came up with an awesome challenge! And with an awesome challenge we should get an awesome prize as well.
-                                Therefore for the winner of this challenge will get a ...</p>
-
-                            <p>
-                                The goal is to create anything you want within 1 single html file. Practice your skills with no assistance from libraries, no separation of files, and no assistance of a modern framework.
-                                <b>How creative can you be with such restrictions?</b>
-                            </p>
-                        </article>
-                        <aside>
-                            <a class="btn btn-primary btn-lg" href="https://github.com/FrontMen/one-html-page-challenge/blob/master/README.md#how-to-submit" role="button">Submit an Entry</a>
-                        </aside>
-                       <article>
-                           <h2>Prizes</h2>
-                           <p>Submit your contributions before December 31st to win prizes.
-                               The jury will score all submitted projects and select a <b>winner</b>.
-                           </p>
-                           <h3>The Jury</h3>
-                           <uL>
-                               <li>Sylvia "Multi-threader" Blok</li>
-                               <li>Matthias "Uren" de Boer</li>
-                               <li>Jeroen "Use the (Sales)Force" Groothoff</li>
-                           </uL>
-                       </article>
-                    </section>
-                    <div class="input-group flex-nowrap">
-                        <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="addon-wrapping" id="search" oninput="searchOnInput()" />
-                        <div class="input-group-append">
-                            <span class="input-group-text" id="addon-wrapping">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAA0dJREFUeJzt3THLlWUcx/Gf+gRKgzWGgkIJEg7qUA3ia/AFRFNjY0NDL0CksTfQO6jJFqXZTYi0dHAWBcEGl3ganPuF13U6l3fP5wNn/HP978P5wj3cz3MnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8u2OrF1jkbJLzq5cY8DzJg9VL8P/3TZLDDX5+/C++DP7Z8dULwNtMIFAIBAqBQCEQKAQChUCgEAgUAoFCIFAIBAqBQCEQKAQCxcHqBSbcSXJucPaHJBd2uMu+XE3yeGL+SpKXO9rlSNhyIOeSfDg4+27mfmirXMr4NSfJiV0tclS4xYJCIFAIBAqBQCEQKAQChUCgEAgUAoFCIFAIBAqBQCEQKFa+/uBsks8n5t/J66dyR/yS5OeJs1f5OMkXE/PPMv4E990k9ybO5g1dy9yrAD7a/8qb9yLj3/fXC/Zdzi0WFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCASKg4VnP0/y08T81SSXBmf/SPLbxNmrfJDk04n520lODc4+mjiXBR4nORz83Fyw7y7cyPg1HyZ5b/8rb5tbLCgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQrPx7kFlXkpwYnP0yyYsd7rIvt5O8PzF/P8npwdlvk3w/cfYmbTmQlxOzBxn/oax0KnNhn874dZ+cOHez3GJBIRAoBAKFQKAQCBQCgUIgUAgECoFAIRAoBAKFQKAQCBTHVi+wyCdJrq9eYsCjzL0y4quMP5X7V5Izg7NPk9wanIVN+C7jr114uGDfnXCLBYVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQbPmfV7NfT5P8Pjj7JMnFibOfJHk1MQ9vtYsZf1T+MMln+1/5NbdYUAgECoFAIRAoBAKFQKAQCBQCgUIgUAgECoFAIRAoBAKFQKA4qq8/YL9OJrk8Mf9rkj93tAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADv3N1QfrvVma6YVAAAAAElFTkSuQmCC" alt="">
-                            </span>
-                        </div>
-                    </div>
-                    <div id="list"></div>
+              <p>
+                The goal is to create anything you want within 1 single html
+                file. Practice your skills with no assistance from libraries, no
+                separation of files, and no assistance of a modern framework.
+                <b>How creative can you be with such restrictions?</b>
+              </p>
+            </article>
+            <aside>
+              <a
+                class="btn btn-primary btn-lg"
+                href="https://github.com/FrontMen/one-html-page-challenge/blob/master/README.md#how-to-submit"
+                role="button"
+                >Submit an Entry</a
+              >
+            </aside>
+            <article>
+              <h2>Win!</h2>
+              <p>
+                Submit your contributions before <b>December 31st, 12p.m.</b> to
+                win prizes. The jury will score all submitted projects and
+                select a <b>winner</b>.
+              </p>
+              <h3>The Jury</h3>
+              <ul>
+                <li>Sylvia "Multi-threader" Blok</li>
+                <li>Matthias "Uren" de Boer</li>
+                <li>Jeroen "Use the (Sales)Force" Groothoff</li>
+              </ul>
+              </article>
+              <article>
+              <h3>Prizes</h3>
+              <p>Be lucky and win one of carefully selected prizes!</p>
+              <div class="d-flex flex-row justify-content-around">
+                <div class="card" style="width: 16rem">
+                  <img
+                    src="./meta/ostrich_pillow.jpg"
+                    class="card-img-top"
+                    alt="second prize ostrich pillow"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title text-dark">Second</h5>
+                    <p class="card-text text-dark">Ostrich Original Napping Pillow, Immersive cozy experience</p>
+                  </div>
                 </div>
-            </section>
-            <p class="text-right">Project inspired on  <a href="https://onehtmlpagechallenge.com" rel="nofollow">One HTML Page Challenge</a> by <a href="https://github.com/Metroxe/one-html-page-challenge" rel="nofollow">Metroxe</a></p>
-        </main>
-        <br />
+                <div class="card" style="width: 20rem">
+                  <img
+                    src="./meta/apple_watch.jpg"
+                    class="card-img-top"
+                    alt="first prize apple watch"
+                  />
+                  <div class="card-body">
+                    <h3 class="card-title text-orange">First</h5>
+                    <p class="card-text text-dark">Apple Watch SE, Space Gray Aluminum Case with Sport Band 40 mm</p>
+                  </div>
+                </div>
+                <div class="card" style="width: 16rem">
+                  <img
+                    src="./meta/coders_book.jpg"
+                    class="card-img-top"
+                    alt="third prize book: coders"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title text-dark">Third</h5>
+                    <p class="card-text text-dark">Coders: Who They Are, What They Think and How They Are Changing Our World</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+          <div class="input-group flex-nowrap">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="addon-wrapping"
+              id="search"
+              oninput="searchOnInput()"
+            />
+            <div class="input-group-append">
+              <span class="input-group-text" id="addon-wrapping">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAA0dJREFUeJzt3THLlWUcx/Gf+gRKgzWGgkIJEg7qUA3ia/AFRFNjY0NDL0CksTfQO6jJFqXZTYi0dHAWBcEGl3ganPuF13U6l3fP5wNn/HP978P5wj3cz3MnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8u2OrF1jkbJLzq5cY8DzJg9VL8P/3TZLDDX5+/C++DP7Z8dULwNtMIFAIBAqBQCEQKAQChUCgEAgUAoFCIFAIBAqBQCEQKAQCxcHqBSbcSXJucPaHJBd2uMu+XE3yeGL+SpKXO9rlSNhyIOeSfDg4+27mfmirXMr4NSfJiV0tclS4xYJCIFAIBAqBQCEQKAQChUCgEAgUAoFCIFAIBAqBQCEQKFa+/uBsks8n5t/J66dyR/yS5OeJs1f5OMkXE/PPMv4E990k9ybO5g1dy9yrAD7a/8qb9yLj3/fXC/Zdzi0WFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCASKg4VnP0/y08T81SSXBmf/SPLbxNmrfJDk04n520lODc4+mjiXBR4nORz83Fyw7y7cyPg1HyZ5b/8rb5tbLCgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQrPx7kFlXkpwYnP0yyYsd7rIvt5O8PzF/P8npwdlvk3w/cfYmbTmQlxOzBxn/oax0KnNhn874dZ+cOHez3GJBIRAoBAKFQKAQCBQCgUIgUAgECoFAIRAoBAKFQKAQCBTHVi+wyCdJrq9eYsCjzL0y4quMP5X7V5Izg7NPk9wanIVN+C7jr114uGDfnXCLBYVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQbPmfV7NfT5P8Pjj7JMnFibOfJHk1MQ9vtYsZf1T+MMln+1/5NbdYUAgECoFAIRAoBAKFQKAQCBQCgUIgUAgECoFAIRAoBAKFQKA4qq8/YL9OJrk8Mf9rkj93tAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADv3N1QfrvVma6YVAAAAAElFTkSuQmCC"
+                  alt=""
+                />
+              </span>
+            </div>
+          </div>
+          <div id="list"></div>
+        </div>
+      </section>
+      <p class="text-right">
+        Project inspired on
+        <a href="https://onehtmlpagechallenge.com" rel="nofollow"
+          >One HTML Page Challenge</a
+        >
+        by
+        <a
+          href="https://github.com/Metroxe/one-html-page-challenge"
+          rel="nofollow"
+          >Metroxe</a
+        >
+      </p>
+    </main>
+    <br />
 
-        <script src="./entries.js"></script>
-        <script>
-            // sort based on title
-            const sortedEntries = entries.sort((a, b) => (a.title > b.title ? 1 : b.title > a.title ? -1 : 0));
+    <script src="./entries.js"></script>
+    <script>
+      // sort based on title
+      const sortedEntries = entries.sort((a, b) =>
+        a.title > b.title ? 1 : b.title > a.title ? -1 : 0
+      );
 
-            // create initial list
-            searchOnInput();
+      // create initial list
+      searchOnInput();
 
-            function searchOnInput() {
-                //get elements
-                const filter = document.getElementById("search").value.toLowerCase();
-                const list = document.getElementById("list");
+      function searchOnInput() {
+        //get elements
+        const filter = document.getElementById("search").value.toLowerCase();
+        const list = document.getElementById("list");
 
-                // remove children
-                while (list.firstChild) {
-                    list.removeChild(list.firstChild);
-                }
+        // remove children
+        while (list.firstChild) {
+          list.removeChild(list.firstChild);
+        }
 
-                // filter list
-                const filteredEntries = sortedEntries.filter((entry) => {
-                    let key;
-                    for (key in entry) {
-                        if (entry.hasOwnProperty(key)) {
-                            const prop = entry[key];
-                            if (typeof prop === "string" && prop.toLowerCase().includes(filter)) {
-                                return true;
-                            }
-                        }
-                    }
-                    return false;
-                });
-
-                // create list
-                filteredEntries.forEach(({ title, description, filename, github, author, compatibleBrowsers, sponsored }) => {
-                    // horizontal rule
-                    const hr = document.createElement("hr");
-                    hr.classList.add('my-3');
-                    list.appendChild(hr);
-
-                    const card = document.createElement("div");
-                    card.className = "card";
-
-                    const body = document.createElement("div");
-                    body.className = "card-body";
-                    card.appendChild(body);
-
-                    // title
-                    const cardTitle = document.createElement("h5");
-                    const cardTitleNode = document.createTextNode(title);
-                    cardTitle.className = "card-title";
-                    cardTitle.appendChild(cardTitleNode);
-                    body.appendChild(cardTitle);
-
-                    // author
-                    if (author) {
-                        const authorSubtitle = document.createElement("h6");
-                        const authorSubtitleNode = document.createTextNode(author);
-                        authorSubtitle.className = "card-subtitle mb-2 text-muted";
-                        authorSubtitle.appendChild(authorSubtitleNode);
-
-                        // add an owner tag for myself
-                        if (author.includes("Christopher Powroznik")) {
-                            const ownerEmoji = document.createElement("a");
-                            const ownerEmojiNode = document.createTextNode(" 👑️");
-                            ownerEmoji.href = "https://github.com/Metroxe";
-                            ownerEmoji.title = "Owner";
-                            ownerEmoji.appendChild(ownerEmojiNode);
-                            authorSubtitle.appendChild(ownerEmoji);
-                        }
-
-                        body.appendChild(authorSubtitle);
-                    }
-
-                    // description
-                    if (description) {
-                        const cardDescription = document.createElement("p");
-                        const cardDescriptionNode = document.createTextNode(description);
-                        cardDescription.className = "card-text";
-                        cardDescription.appendChild(cardDescriptionNode);
-                        body.appendChild(cardDescription);
-                    }
-
-                    // browser list
-                    if (compatibleBrowsers) {
-                        const browserList = document.createElement("p");
-                        const browser = compatibleBrowsers.join(", ");
-                        const browserNameNode = document.createTextNode(browser);
-                        browserList.className = "card-text";
-                        browserList.appendChild(browserNameNode);
-                        body.appendChild(browserList);
-                    }
-
-                    // toolbar
-                    const toolbar = document.createElement("div");
-                    const group1 = document.createElement("div");
-                    const group2 = document.createElement("div");
-                    const group3 = document.createElement("div");
-                    toolbar.className = "btn-toolbar";
-                    group1.className = "btn-group mr-2";
-                    group2.className = "btn-group mr-2";
-                    group3.className = "btn-group mr-2";
-                    toolbar.appendChild(group1);
-                    toolbar.appendChild(group2);
-                    toolbar.appendChild(group3);
-                    body.appendChild(toolbar);
-
-                    // HTML Link
-                    const linkButton = document.createElement("a");
-                    const linkButtonNode = document.createTextNode(filename);
-                    linkButton.className = "btn btn-primary btn-md";
-                    linkButton.href = `./entries/${filename}`;
-                    linkButton.appendChild(linkButtonNode);
-                    group1.appendChild(linkButton);
-
-                    // Source Code Link
-                    const sourceCodeButton = document.createElement("a");
-                    const sourceCodeNode = document.createTextNode("Source");
-                    sourceCodeButton.className = "btn btn-secondary btn-md";
-                    sourceCodeButton.href = `https://github.com/FrontMen/one-html-page-challenge/blob/master/entries/${filename}`;
-                    sourceCodeButton.appendChild(sourceCodeNode);
-                    group2.appendChild(sourceCodeButton);
-
-                    // github button
-                    if (github) {
-                        const githubButton = document.createElement("a");
-                        const githubButtonNode = document.createTextNode("Github");
-                        githubButton.className = "btn btn-primary btn-md";
-                        githubButton.href = `https://github.com/${github}`;
-                        githubButton.appendChild(githubButtonNode);
-                        group3.appendChild(githubButton);
-                    }
-                    list.appendChild(card);
-                });
+        // filter list
+        const filteredEntries = sortedEntries.filter((entry) => {
+          let key;
+          for (key in entry) {
+            if (entry.hasOwnProperty(key)) {
+              const prop = entry[key];
+              if (
+                typeof prop === "string" &&
+                prop.toLowerCase().includes(filter)
+              ) {
+                return true;
+              }
             }
-        </script>
-    </body>
+          }
+          return false;
+        });
+
+        // create list
+        filteredEntries.forEach(
+          ({
+            title,
+            description,
+            filename,
+            github,
+            author,
+            compatibleBrowsers,
+            sponsored,
+          }) => {
+            // horizontal rule
+            const hr = document.createElement("hr");
+            hr.classList.add("my-3");
+            list.appendChild(hr);
+
+            const card = document.createElement("div");
+            card.className = "card";
+
+            const body = document.createElement("div");
+            body.className = "card-body";
+            card.appendChild(body);
+
+            // title
+            const cardTitle = document.createElement("h5");
+            const cardTitleNode = document.createTextNode(title);
+            cardTitle.className = "card-title";
+            cardTitle.appendChild(cardTitleNode);
+            body.appendChild(cardTitle);
+
+            // author
+            if (author) {
+              const authorSubtitle = document.createElement("h6");
+              const authorSubtitleNode = document.createTextNode(author);
+              authorSubtitle.className = "card-subtitle mb-2 text-muted";
+              authorSubtitle.appendChild(authorSubtitleNode);
+
+              // add an owner tag for myself
+              if (author.includes("Christopher Powroznik")) {
+                const ownerEmoji = document.createElement("a");
+                const ownerEmojiNode = document.createTextNode(" 👑️");
+                ownerEmoji.href = "https://github.com/Metroxe";
+                ownerEmoji.title = "Owner";
+                ownerEmoji.appendChild(ownerEmojiNode);
+                authorSubtitle.appendChild(ownerEmoji);
+              }
+
+              body.appendChild(authorSubtitle);
+            }
+
+            // description
+            if (description) {
+              const cardDescription = document.createElement("p");
+              const cardDescriptionNode = document.createTextNode(description);
+              cardDescription.className = "card-text";
+              cardDescription.appendChild(cardDescriptionNode);
+              body.appendChild(cardDescription);
+            }
+
+            // browser list
+            if (compatibleBrowsers) {
+              const browserList = document.createElement("p");
+              const browser = compatibleBrowsers.join(", ");
+              const browserNameNode = document.createTextNode(browser);
+              browserList.className = "card-text";
+              browserList.appendChild(browserNameNode);
+              body.appendChild(browserList);
+            }
+
+            // toolbar
+            const toolbar = document.createElement("div");
+            const group1 = document.createElement("div");
+            const group2 = document.createElement("div");
+            const group3 = document.createElement("div");
+            toolbar.className = "btn-toolbar";
+            group1.className = "btn-group mr-2";
+            group2.className = "btn-group mr-2";
+            group3.className = "btn-group mr-2";
+            toolbar.appendChild(group1);
+            toolbar.appendChild(group2);
+            toolbar.appendChild(group3);
+            body.appendChild(toolbar);
+
+            // HTML Link
+            const linkButton = document.createElement("a");
+            const linkButtonNode = document.createTextNode(filename);
+            linkButton.className = "btn btn-primary btn-md";
+            linkButton.href = `./entries/${filename}`;
+            linkButton.appendChild(linkButtonNode);
+            group1.appendChild(linkButton);
+
+            // Source Code Link
+            const sourceCodeButton = document.createElement("a");
+            const sourceCodeNode = document.createTextNode("Source");
+            sourceCodeButton.className = "btn btn-secondary btn-md";
+            sourceCodeButton.href = `https://github.com/FrontMen/one-html-page-challenge/blob/master/entries/${filename}`;
+            sourceCodeButton.appendChild(sourceCodeNode);
+            group2.appendChild(sourceCodeButton);
+
+            // github button
+            if (github) {
+              const githubButton = document.createElement("a");
+              const githubButtonNode = document.createTextNode("Github");
+              githubButton.className = "btn btn-primary btn-md";
+              githubButton.href = `https://github.com/${github}`;
+              githubButton.appendChild(githubButtonNode);
+              group3.appendChild(githubButton);
+            }
+            list.appendChild(card);
+          }
+        );
+      }
+    </script>
+  </body>
 </html>
