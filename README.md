@@ -10,6 +10,7 @@ The goal is to create anything you want within 1 single html file. Practice your
  - You cannot import any external files (this will be checked by looking at the network tab in chrome).
  - Due to the nature of hiding lots of funtionality behind APIs, you cannot have any incoming network requests.
  - You are allowed to use libraries, however the library must be hard coded into a script tag and still must fit under the 1MB file size. (I suggest using a cdn and replacing with hardcoding the minified library at the end, or use [JSCompress](https://jscompress.com/)).
+ - Only Frontmen employees can attent in the competition.
  
 ## How to Submit
  1. Fork the repository.
