@@ -491,8 +491,9 @@
               <article>
               <h3>Prizes</h3>
               <p>Be lucky and win one of carefully selected prizes!</p>
-              <div class="d-flex flex-row justify-content-around">
-                <div class="card" style="width: 16rem">
+              <div class="d-flex flex-md-row flex-column justify-content-around
+              align-items-center">
+                <div class="card order-1 order-md-0" style="width: 16rem">
                   <img
                     src="./meta/ostrich_pillow.jpg"
                     class="card-img-top"
@@ -503,7 +504,7 @@
                     <p class="card-text text-dark">Ostrich Original Napping Pillow, Immersive cozy experience</p>
                   </div>
                 </div>
-                <div class="card" style="width: 20rem">
+                <div class="card order-0 order-md-1" style="width: 20rem">
                   <img
                     src="./meta/apple_watch.jpg"
                     class="card-img-top"
@@ -514,7 +515,7 @@
                     <p class="card-text text-dark">Apple Watch SE, Space Gray Aluminum Case with Sport Band 40 mm</p>
                   </div>
                 </div>
-                <div class="card" style="width: 16rem">
+                <div class="card order-2 order-md-2" style="width: 16rem">
                   <img
                     src="./meta/coders_book.jpg"
                     class="card-img-top"
@@ -640,10 +641,10 @@
               authorSubtitle.appendChild(authorSubtitleNode);
 
               // add an owner tag for myself
-              if (author.includes("Christopher Powroznik")) {
+              if (author.includes("Randynamic")) {
                 const ownerEmoji = document.createElement("a");
                 const ownerEmojiNode = document.createTextNode(" 👑️");
-                ownerEmoji.href = "https://github.com/Metroxe";
+                ownerEmoji.href = "https://github.com/Randynamic";
                 ownerEmoji.title = "Owner";
                 ownerEmoji.appendChild(ownerEmojiNode);
                 authorSubtitle.appendChild(ownerEmoji);
