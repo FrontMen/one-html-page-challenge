@@ -22,4 +22,12 @@ const entries = [
 		github: "Metroxe",
 		compatibleBrowsers: ["Chrome Desktop"],
 	},
+	{
+		title: "Pink vs Unknowns",
+		filename: "pink-vs-unknowns.html",
+		description: "Pink vs Unknowns is a simulation where two sides have opposite contradictory missions.",
+		author: "Aliaksandr B.",
+		github: "ByAliaksandr",
+		compatibleBrowsers: ["Chrome Desktop, Firefox Desktop, Safari Desktop"],
+	},
 ];
