@@ -30,4 +30,12 @@ const entries = [
 		github: "ByAliaksandr",
 		compatibleBrowsers: ["Chrome Desktop, Firefox Desktop, Safari Desktop"],
 	},
+	{
+		title: "Ping Pong",
+		filename: "ping-pong.html",
+		description: "Ping Pong is a classical arcade game which you can play with two people. You can also set the computer as an auto player, moreover set two auto players and watch them while they play against each other.",
+		author: "Osman Fikret Ceylan",
+		github: "ofcyln",
+		compatibleBrowsers: ["Chrome Desktop", "Firefox Desktop", "Safari Desktop", "Edge Chromium Desktop", "Brave Desktop"],
+	},
 ];
