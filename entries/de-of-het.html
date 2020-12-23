@@ -1,0 +1,925 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height">
+  <title>De of Het 🤔</title>
+  <style>
+    :root {
+      --button-bg: #df1165;
+    }
+
+    html,
+    body {
+      font-family: Roboto, sans-serif;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: white;
+      background-color: #2e2e2e;
+    }
+
+    section {
+      margin: 0 1rem;
+      padding: 1rem;
+      border: 1px solid white;
+      max-width: 500px;
+    }
+
+    #welcome-screen,
+    #game-over {
+      padding-top: 5rem;
+    }
+
+    @media only screen and (min-width: 768px) {
+      section {
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .card {
+        width: 220px !important;
+        height: 300px !important;
+      }
+
+      .card span {
+        font-size: 1.8rem !important;
+      }
+    }
+
+
+    .final-score {
+      margin-bottom: 4.5rem;
+    }
+
+    .card {
+      width: 300px;
+      height: 360px;
+      position: absolute;
+      cursor: grab;
+      top: 50%;
+      left: 50%;
+      border-radius: 2.5rem;
+      box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.3);
+      background-image: linear-gradient(-180deg, #d94e47 2%, #df1165);
+      background-size: cover;
+      transform: translateX(-50%) translateY(-50%) scale(0.95);
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+
+    .card:nth-child(1) {
+      margin-top: 1rem;
+    }
+
+    .card span {
+      font-size: 2em;
+      text-shadow: 0px 0px 5px #000000;
+    }
+
+    .card:after {
+      content: "";
+      width: 21px;
+      height: 3px;
+      left: 0;
+      bottom: 11px;
+      right: 0;
+      position: absolute;
+      margin: auto;
+      border-radius: 100px;
+      background: rgba(0, 0, 0, .3);
+    }
+
+    .bubbly-button {
+      display: inline-block;
+      font-size: 1em;
+      padding: 1em 2em;
+      margin-top: 3rem;
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: #df1165;
+      color: #fff;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+      box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    .bubbly-button:focus {
+      outline: 0;
+    }
+
+    .bubbly-button:before,
+    .bubbly-button:after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 140%;
+      height: 100%;
+      left: -20%;
+      z-index: -1000;
+      transition: all ease-in-out 0.5s;
+      background-repeat: no-repeat;
+    }
+
+    .bubbly-button:before {
+      display: none;
+      top: -75%;
+      background-image:
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, transparent 20%, var(--button-bg) 20%, transparent 30%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, var(--button-bg) 15%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%);
+      background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+    }
+
+    .button-blue {
+      background-image:
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, var(--button-bg) 15%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%);
+      background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+    }
+
+    .bubbly-button:after {
+      display: none;
+      bottom: -75%;
+      background-image:
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, var(--button-bg) 15%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+        radial-gradient(circle, var(--button-bg) 20%, transparent 20%);
+      background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+    }
+
+    .bubbly-button:active {
+      transform: scale(0.9);
+      background-color: var(--button-bg, 5%);
+      box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+    }
+
+    #score-title {
+      font-size: 2.4rem;
+    }
+
+    .final-score {
+      font-weight: 400;
+    }
+
+    #game-over {
+      margin: 0 auto;
+      min-width: 300px;
+      width: 35vw;
+    }
+
+    .word-display {
+      text-align: left;
+    }
+
+    .word-result {
+      display: flex;
+      text-transform: capitalize;
+      flex-direction: column;
+      font-size: 1.1rem;
+      text-align: left;
+    }
+
+    .word-result span {
+      flex: 0.5;
+    }
+
+    .word-result .translation {
+      opacity: 0.85;
+      font-style: italic;
+    }
+
+    .word-result>div {
+      margin-bottom: 2rem;
+      display: flex;
+    }
+
+    .word-table {
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    .word-table .wrong {
+      color: #bd4545;
+    }
+
+    .word-table .correct {
+      color: #4aaf4a;
+    }
+
+    .card-container {
+      display: flex;
+      height: 80vh;
+      min-width: 16rem;
+      max-width: 28rem;
+      margin: auto;
+    }
+
+    .article {
+      align-self: center;
+      margin: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ff7e7e;
+    }
+
+    .article:last-of-type {
+      margin-left: auto;
+    }
+
+    .game-progress {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+
+    .game-progress .score {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      height: 10px;
+      border-radius: 1rem;
+      width: auto;
+      margin: 0 .1rem;
+      display: block;
+      background: hsla(0, 0%, 100%, .1);
+      min-width: 0;
+      -webkit-transition: background .2s linear;
+      transition: background .2s linear;
+    }
+
+    .score.correct {
+      background: #47d99a;
+    }
+
+    .score.wrong {
+      background: #d94e47;
+    }
+
+    #game-actions {
+      padding-bottom: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div class="game-progress" style="display: none">
+      <div class="score"></div>
+      <div class="score"></div>
+      <div class="score"></div>
+      <div class="score"></div>
+      <div class="score"></div>
+      <div class="score"></div>
+      <div class="score"></div>
+      <div class="score"></div>
+    </div>
+  </div>
+  <div class="card-container" style="display: none;">
+    <div class="article">DE</div>
+    <div class="article">HET</div>
+  </div>
+  <div id="board"></div>
+  <div id="game-over" style="display: none">
+    <h1 id="score-title">Game over!</h1>
+    <h2 class="final-score">Your score:
+      <span id="game-score" />
+    </h2>
+    <div class="word-table">
+      <h2 class="correct">Correct</h2>
+      <div id="correct-words" class="word-result"></div>
+    </div>
+    <div class="word-table">
+      <h2 class="wrong">Wrong</h2>
+      <div id="wrong-words" class="word-result"></div>
+    </div>
+  </div>
+  <div id="welcome-screen">
+    <h1>🤔 De of Het? 🤔</h1>
+    <section>
+      <p style="font-size: 1.2rem;">Welcome to <strong style="color: #ff428d">De</strong> of <strong
+          style="color: #ff428d">Het</strong>!</p>
+      <p>
+        Swipe the cards to the left if you think the word's article is
+        <i>De</i>, or to the right if you think it is
+        <i>Het.</i>
+      </p>
+      <p>Good luck!</p>
+    </section>
+  </div>
+  <div id="game-actions">
+    <button class="bubbly-button">Let's play!</button>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+  <script>
+    let welcomeScreen = document.getElementById('welcome-screen');
+    let startGameButton = document.getElementById('game-actions');
+    let cardContainer = document.querySelector('.card-container');
+    let gameProgressBar = document.querySelector('.game-progress');
+    let gameOverScreen = document.getElementById('game-over');
+    let playerScore = document.getElementById('game-score');
+    let correctWordsSection = document.getElementById('correct-words');
+    let wrongWordsSection = document.getElementById('wrong-words');
+    let board = document.getElementById('board')
+
+    const wordList = [
+      {
+        name: 'apparaat',
+        translation: 'machine, appliance',
+        chapter: 1,
+        article: 'het',
+        image:
+          'https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Category_Pages/Appliances/samsung-kitchen-appliance-package.png',
+        point: undefined,
+      },
+      {
+        name: 'bak',
+        translation: 'box',
+        chapter: 1,
+        article: 'de',
+        image:
+          'https://images.homedepot-static.com/productImages/8ceb102c-f6e8-49ff-8870-ec9efc92f99f/svn/pratt-retail-specialties-moving-boxes-lkbox-64_400_compressed.jpg',
+        point: undefined,
+      },
+      {
+        name: 'bedrag',
+        translation: 'amount / sum of money',
+        chapter: 1,
+        article: 'het',
+        image: 'https://stanwoodumc.org/wp-content/uploads/2016/01/money-400x400.png',
+        point: undefined,
+      },
+      {
+        name: 'beker',
+        translation: 'cup',
+        chapter: 1,
+        article: 'de',
+        image:
+          'https://www.ikea.com/be/nl/images/products/svartsjoen-beker-turkoois__0718834_PE731705_S5.JPG?f=s',
+        point: undefined,
+      },
+      {
+        name: 'benzinestation',
+        translation: 'petrol station',
+        chapter: 1,
+        article: 'het',
+        image: 'https://static.turbosquid.com/Preview/000298/821/46/gas-station-self-3d-model_D.jpg',
+        point: undefined,
+      },
+      {
+        name: 'betaling',
+        translation: 'payment',
+        chapter: 1,
+        article: 'de',
+        image:
+          'https://t1.ftcdn.net/jpg/01/99/18/38/400_F_199183867_SrWEHhjS8QqDXM8ZBbaLiP3iAn5aRFok.jpg',
+        point: undefined,
+      },
+      {
+        name: 'broodje',
+        translation: 'bread',
+        chapter: 1,
+        article: 'het',
+        image:
+          'https://www.waitrose.com/content/dam/waitrose/recipes/images/p/PH_Bread-&-butter400.jpg/_jcr_content/renditions/cq5dam.thumbnail.400.400.png',
+        point: undefined,
+      },
+      {
+        name: 'tijdschrift',
+        translation: 'magazine',
+        chapter: 1,
+        article: 'het',
+        image: 'https://www.jilster.nl/wp-content/uploads/2018/12/Verjaardag-cover-1.jpg',
+        point: undefined,
+      },
+      {
+        name: 'zegeltjes',
+        translation: 'trading stamps',
+        chapter: 1,
+        article: 'de',
+        image: 'https://i.ebayimg.com/images/g/w40AAOSwpw5byOD3/s-l400.jpg',
+        point: undefined,
+      },
+      {
+        name: 'advertentie',
+        translation: 'advertisement',
+        chapter: 1,
+        article: 'de',
+        image:
+          'http://elysiumdesigners.com/wp-content/uploads/2015/02/elysiumdesigner_elysiumacademy_advertisnmentboard2.jpg',
+        point: undefined,
+      },
+      {
+        name: 'college',
+        translation: 'lecture',
+        chapter: 1,
+        article: 'het',
+        image: 'http://www.5acreshighschool.co.uk/_site/data/images/news/80/main-IMG1487.jpg',
+        point: undefined,
+      },
+      {
+        name: 'deur',
+        translation: 'door',
+        chapter: 1,
+        article: 'de',
+        image: 'https://i.ebayimg.com/00/s/NDAwWDQwMA==/z/YvUAAOSw-sVcWTbf/$_85.JPG',
+        point: undefined,
+      },
+      {
+        name: 'frisdrank',
+        translation: 'soft drink',
+        chapter: 1,
+        article: 'de',
+        image: 'https://is2.ecplaza.com/ecplaza2/products/e/e2/e2c/1811197009/coca-cola-soft.jpg',
+        point: undefined,
+      },
+      {
+        name: 'hout',
+        translation: 'wood',
+        chapter: 1,
+        article: 'het',
+        image: 'http://www.eborcraft.co.uk/images/assets/veneers2/cherry-veneer-400.jpg',
+        point: undefined,
+      },
+      {
+        name: 'koelkast',
+        translation: 'refrigerator',
+        chapter: 1,
+        article: 'de',
+        image: 'https://5.imimg.com/data5/CA/UN/MY-4388037/double-door-refrigerator-500x500.jpg',
+        point: undefined,
+      },
+      {
+        name: 'leer',
+        translation: 'leather',
+        chapter: 1,
+        article: 'het',
+        image:
+          'https://i.shgcdn.com/e91f3154-1bae-428b-b4c1-89016b903c5e/-/format/auto/-/preview/3000x3000/-/quality/lighter/',
+        point: undefined,
+      },
+      {
+        name: 'meisje',
+        translation: 'girl',
+        chapter: 1,
+        article: 'het',
+        image:
+          'https://dafitistatic-a.akamaihd.net/p/Masquerade-Fantasias-Fantasia-Masquerade-Fantasias-Diamant-Girl-Azul-2603-9343544-1-product.jpg',
+        point: undefined,
+      },
+      {
+        name: 'muziekinstrument',
+        translation: 'musical instrument',
+        chapter: 1,
+        article: 'het',
+        image:
+          'https://tmw.com.sg/wp-content/uploads/2019/05/a-simple-guide-to-helping-you-choose-musical-instrument.jpg',
+        point: undefined,
+      },
+      {
+        name: 'beeld',
+        translation: 'screen',
+        chapter: 1,
+        article: 'het',
+        image:
+          'https://w1.ezcdn.com.br/mundoautomacao/fotos/grande/161fg1/monitor-bematech-touch-screen-lcd-tm-15.jpg',
+        point: undefined,
+      },
+      {
+        name: 'televisie',
+        translation: 'television set',
+        chapter: 1,
+        article: 'de',
+        image:
+          'https://d3ddx6b2p2pevg.cloudfront.net/Custom/Content/Products/10/02/1002139_smart-tv-panasonic-65-4k-ultra-hd-65fx600-3-usb-3-hdmi_m7_636810194551127612',
+        point: undefined,
+      },
+    ];
+
+    const getShuffledArr = (arr) => {
+      return arr.sort(() => Math.random() - 0.5)
+    };
+
+    const getWordList = () => {
+      chapter = Math.floor(Math.random() * 0) + 1;
+      return getShuffledArr(
+        wordList.filter((word) => {
+          return word.article && word.translation && word.chapter === chapter;
+        })
+      ).splice(0, 8)
+    };
+
+    class AudioService {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext || window.audioContext);
+
+      beep(duration, frequency, volume, type) {
+        var oscillator = this.audioCtx.createOscillator();
+        var gainNode = this.audioCtx.createGain();
+
+        oscillator.connect(gainNode);
+        gainNode.connect(this.audioCtx.destination);
+
+        if (volume) { gainNode.gain.value = volume; }
+        if (frequency) { oscillator.frequency.value = frequency; }
+        if (type) { oscillator.type = type; }
+
+        oscillator.start(this.audioCtx.currentTime);
+        oscillator.stop(this.audioCtx.currentTime + ((duration || 500) / 1000));
+      };
+
+      play(audio) {
+        if (audio === 'correct') {
+          this.beep(150, 400, 0.7, 'triangle');
+          setTimeout(() => {
+            this.beep(150, 820, 0.7, 'triangle');
+          }, 200)
+        } else {
+          this.beep(300, 300);
+          this.beep(300, 200);
+        }
+      }
+    }
+
+    class SpeakerService {
+      voice = undefined;
+
+      constructor() {
+        this.setVoice('nl-NL');
+      }
+
+      async setVoice(locale) {
+        this.voice = await this.getVoiceByLocale(locale);
+      }
+
+      get synth() {
+        return window.speechSynthesis;
+      }
+
+      get onReady() {
+        return new Promise((resolve) => (this.synth.onvoiceschanged = resolve));
+      }
+
+      async getVoices() {
+        return new Promise(async (resolve) => {
+          // Only wait when browsers support it, otherwise call it directly
+          if ('onvoiceschanged' in this.synth) {
+            await this.onReady;
+            resolve(this.synth.getVoices());
+          }
+
+          resolve(this.synth.getVoices());
+        });
+      }
+
+      async getVoiceByLocale(locale) {
+        const voices = await this.getVoices();
+
+        const voice = voices.find((v) => v.lang === locale);
+        if (voice === undefined) {
+          const errorMsg = `Could not find a voice with the given locale: ${locale}`;
+          throw new Error(errorMsg);
+        }
+
+        return voice;
+      }
+
+      speak(word) {
+        const utterThis = new SpeechSynthesisUtterance(word);
+        if (this.voice) {
+          utterThis.voice = this.voice;
+          this.synth.speak(utterThis);
+        } else {
+          const errorMsg = `Could not speak: Speech voice is not available`;
+          throw new Error(errorMsg);
+        }
+      }
+    }
+
+    class Game {
+      isRunning = false;
+      isOver = false;
+      visibleCards = 0;
+      cardStack;
+      resultList;
+
+      constructor() {
+        this.cardStack = new CardStack(board, this.setPoint, this.stopGame.bind(this))
+      }
+
+      startGame() {
+        gameOverScreen.style.display = 'none';
+        startGameButton.style.display = 'none';
+        welcomeScreen.style.display = 'none';
+        cardContainer.style.display = 'flex';
+        gameProgressBar.style.display = 'flex';
+        document.querySelectorAll('.score').forEach(el => el.classList.remove('wrong', 'correct'))
+        this.resultList = [];
+        this.cardStack.init(getWordList());
+      }
+
+      setPoint = (selectedArticle, word) => {
+        const { article, name, translation } = word;
+        const point = article === selectedArticle ? 1 : 0;
+        const sentence = `${article} ${name} -> ${translation}`;
+
+        const progressElement = document.querySelectorAll('.score')[this.resultList.length];
+        this.resultList.push({ name: `${article} ${name}`, translation, point })
+
+        if (point === 0) {
+          audioService.play('wrong');
+          progressElement.classList.add('wrong')
+        } else {
+          audioService.play('correct');
+          progressElement.classList.add('correct')
+        }
+      }
+
+      buildResultSection(correct, wordsSection) {
+        const filteredWords = this.filterWords(correct);
+
+        wordsSection.innerHTML = '';
+
+        if (filteredWords.length > 0) {
+          filteredWords.forEach(word => {
+            const wordWrapper = document.createElement('div');
+            const wordElement = document.createElement('span');
+            wordElement.textContent = word.name;
+
+            const translationElement = document.createElement('span');
+            translationElement.textContent = word.translation;
+            translationElement.classList.add('translation');
+
+            wordWrapper.appendChild(wordElement);
+            wordWrapper.appendChild(translationElement);
+            wordsSection.appendChild(wordWrapper);
+          })
+        } else {
+          wordsSection.textContent = correct ? 'You got nothing 😭' : 'No errors at all. Congratz! 🎉';
+        }
+      }
+
+      stopGame() {
+        this.buildResultSection(true, correctWordsSection);
+        this.buildResultSection(false, wrongWordsSection);
+
+        startGameButton.style.display = 'block';
+        gameOverScreen.style.display = 'block';
+        cardContainer.style.display = 'none';
+        playerScore.textContent = this.filterWords(true).length;
+      }
+
+      filterWords(correct) {
+        return this.resultList.filter((word) => word.point === (correct ? 1 : 0));
+      }
+    }
+
+    class CardStack {
+
+      currentCard
+      wordsList
+      constructor(element, onSwipe, onEmpty) {
+        this.board = element
+        this.onSwipe = onSwipe
+        this.onEmpty = onEmpty
+      }
+
+      init(wordsList) {
+        this.wordsList = wordsList
+        this.push()
+
+        // handle gestures
+        this.handle()
+      }
+
+      handle() {
+        // list all cards
+        this.cards = this.board.querySelectorAll('.card')
+
+        // get top card
+        this.topCard = this.cards[this.cards.length - 1]
+
+        // get next card
+        this.nextCard = this.cards[this.cards.length - 2]
+
+        // if at least one card is present
+        if (this.cards.length > 0) {
+
+          // set default top card position and scale
+          this.topCard.style.transform =
+            'translateX(-50%) translateY(-75%) rotate(0deg) rotateY(0deg) scale(1)'
+
+          // destroy previous Hammer instance, if present
+          if (this.hammer) this.hammer.destroy()
+
+          // listen for tap and pan gestures on top card
+          this.hammer = new Hammer(this.topCard)
+          this.hammer.add(new Hammer.Tap())
+          this.hammer.add(new Hammer.Pan({
+            position: Hammer.position_ALL,
+            threshold: 0
+          }))
+
+          // pass events data to custom callbacks
+          this.hammer.on('tap', (e) => {
+            this.onTap(e)
+          })
+          this.hammer.on('pan', (e) => {
+            this.onPan(e)
+          })
+        }
+      }
+
+      onTap(e) {
+        // get finger position on top card
+        let propX = (e.center.x - e.target.getBoundingClientRect().left) / e.target.clientWidth
+
+        // get rotation degrees around Y axis (+/- 15) based on finger position
+        let rotateY = 15 * (propX < 0.05 ? -1 : 1)
+
+        // enable transform transition
+        this.topCard.style.transition = 'transform 100ms ease-out'
+
+        // apply rotation around Y axis
+        this.topCard.style.transform =
+          'translateX(-50%) translateY(-75%) rotate(0deg) rotateY(' + rotateY + 'deg) scale(1)'
+
+        // wait for transition end
+        setTimeout(() => {
+          // reset transform properties
+          this.topCard.style.transform =
+            'translateX(-50%) translateY(-75%) rotate(0deg) rotateY(0deg) scale(1)'
+        }, 100)
+      }
+
+      onPan(e) {
+        if (!this.isPanning) {
+
+          this.isPanning = true
+
+          // remove transition properties
+          this.topCard.style.transition = null
+          if (this.nextCard) this.nextCard.style.transition = null
+
+          // get top card coordinates in pixels
+          let style = window.getComputedStyle(this.topCard)
+          let mx = style.transform.match(/^matrix\((.+)\)$/)
+          this.startPosX = mx ? parseFloat(mx[1].split(', ')[4]) : 0
+          this.startPosY = mx ? parseFloat(mx[1].split(', ')[5]) : 0
+
+          // get top card bounds
+          let bounds = this.topCard.getBoundingClientRect()
+
+          // get finger position on top card, top (1) or bottom (-1)
+          this.isDraggingFrom =
+            (e.center.y - bounds.top) > this.topCard.clientHeight / 2 ? -1 : 1
+        }
+
+        // get new coordinates
+        let posX = e.deltaX + this.startPosX
+        let posY = e.deltaY + this.startPosY
+
+        // get ratio between swiped pixels and the axes
+        let propX = e.deltaX / this.board.clientWidth
+        let propY = e.deltaY / this.board.clientHeight
+
+        // get swipe direction, left (-1) or right (1)
+        let dirX = e.deltaX < 0 ? -1 : 1
+
+        // get degrees of rotation, between 0 and +/- 45
+        let deg = this.isDraggingFrom * dirX * Math.abs(propX) * 45
+
+        // get scale ratio, between .95 and 1
+        let scale = (95 + (5 * Math.abs(propX))) / 100
+
+        // move and rotate top card
+        this.topCard.style.transform =
+          'translateX(' + posX + 'px) translateY(' + posY + 'px) rotate(' + deg + 'deg) rotateY(0deg) scale(1)'
+
+        // scale up next card
+        if (this.nextCard) this.nextCard.style.transform =
+          'translateX(-50%) translateY(-75%) rotate(0deg) rotateY(0deg) scale(' + scale + ')'
+
+        if (e.isFinal) {
+
+          this.isPanning = false
+
+          let successful = false
+
+          // set back transition properties
+          this.topCard.style.transition = 'transform 200ms ease-out'
+          if (this.nextCard) this.nextCard.style.transition = 'transform 100ms linear'
+
+          // check threshold and movement direction
+          if (propX > 0.15 && e.direction == Hammer.DIRECTION_RIGHT) {
+
+            successful = true
+            // get right border position
+            posX = this.board.clientWidth
+
+            this.onSwipe('de', this.currentCard)
+          } else if (propX < -0.15 && e.direction == Hammer.DIRECTION_LEFT) {
+
+            successful = true
+            // get left border position
+            posX = -(this.board.clientWidth + this.topCard.clientWidth)
+
+            this.onSwipe('het', this.currentCard)
+          }
+
+          if (successful) {
+
+            // throw card in the chosen direction
+            this.topCard.style.transform =
+              'translateX(' + posX + 'px) translateY(' + posY + 'px) rotate(' + deg + 'deg)'
+
+            // wait transition end
+            setTimeout(() => {
+              // remove swiped card
+              this.board.removeChild(this.topCard)
+              // add new card
+              this.push()
+              // handle gestures on new top card
+              this.handle()
+            }, 200)
+          } else {
+            // reset cards position and size
+            this.topCard.style.transform =
+              'translateX(-50%) translateY(-75%) rotate(0deg) rotateY(0deg) scale(1)'
+            if (this.nextCard) this.nextCard.style.transform =
+              'translateX(-50%) translateY(-75%) rotate(0deg) rotateY(0deg) scale(0.95)'
+          }
+        }
+      }
+
+      push() {
+        this.currentCard = this.wordsList.pop();
+
+        if (!this.currentCard) {
+          this.onEmpty();
+          return;
+        }
+
+        let card = document.createElement('div')
+        let word = document.createElement('span')
+        word.textContent = this.currentCard.name;
+
+        // give a small delay to speak the word
+        setTimeout(() => speakerService.speak(this.currentCard.name), 200);
+
+        card.classList.add('card')
+        if (this.currentCard.image) {
+          card.style.backgroundImage = `url(${this.currentCard.image})`;
+        }
+        card.appendChild(word);
+
+        this.board.insertBefore(card, this.board.firstChild)
+      }
+    }
+
+    let game = new Game();
+    const speakerService = new SpeakerService();
+    const audioService = new AudioService();
+
+    startGameButton.addEventListener('click', () => {
+      game.startGame()
+    })
+  </script>
+</body>
+
+</html>
