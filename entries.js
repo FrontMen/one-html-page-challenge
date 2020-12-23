@@ -38,4 +38,12 @@ const entries = [
 		github: "ofcyln",
 		compatibleBrowsers: ["Chrome Desktop", "Firefox Desktop", "Safari Desktop", "Edge Chromium Desktop", "Brave Desktop"],
 	},
+	{
+		title: "De of Het?",
+		filename: "de-of-het.html",
+		description: "De of Het? is a game to help out who is learning Dutch! The Dutch language is pretty interesting, however there are certain things in the language that have no rules (such as using articles de or het), which makes it difficult to learn. This game brings a different yet fun way of memorizing articles and pronunciation of each word.",
+		author: "Yann Braga",
+		github: "yannbf",
+		compatibleBrowsers: ["Chrome Desktop", "Firefox Desktop", "Safari Desktop", "Edge Chromium Desktop", "Brave Desktop", "Safari Mobile", "Chrome Mobile"],
+	},
 ];
