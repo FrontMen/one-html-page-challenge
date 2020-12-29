@@ -46,4 +46,12 @@ const entries = [
 		github: "yannbf",
 		compatibleBrowsers: ["Chrome Desktop", "Firefox Desktop", "Safari Desktop", "Edge Chromium Desktop", "Brave Desktop", "Safari Mobile", "Chrome Mobile"],
 	},
+	{
+		title: "．ｑｕａｓｉｍｏｎｏ．",
+		filename: "quasimono.html",
+		description: "＊。．。．。．＊　\n．ｃｒｅａｔｅ．📝\n。　ａｓｃｉｉ。　\n．　ｅｍｏｊｉ．✨\n。　　　ａｒｔ。🖼\n．ｆｏｒ　　　．✨\n。ｓｏｃｉａｌ。　\n．　ｍｅｄｉａ．🕊\n＊。．。．。．＊",
+		author: "Jonah J. H.",
+		github: "jonahjoshua",
+		compatibleBrowsers: ["Safari Mobile", "Chrome Mobile", "Safari Desktop", "Chrome Desktop", "Edge Chromium Desktop", "Firefox (probably)", ],
+	},
 ];
