@@ -62,4 +62,12 @@ const entries = [
 		github: "justusromijn",
 		compatibleBrowsers: ["Chrome Desktop", "Edge Chromium Desktop", "Firefox"],
 	},
+	{
+		title: "Amsterdam: avoid the bikes & return home!",
+		filename: "avoid-the-bikes.html",
+		description: "You just got your new job in Amsterdam and moved in. After you picked up your new laptop from the Frontmen offices you need to return to your new home. Little did you know about these crazy bikes...",
+		author: "Ioannis Smyrnios",
+		github: "giannissmirnios",
+		compatibleBrowsers: ["Chrome Desktop", "Firefox Desktop", "Safari Desktop", "Edge Chromium Desktop"],
+	},
 ];
