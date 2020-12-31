@@ -54,4 +54,12 @@ const entries = [
 		github: "jonahjoshua",
 		compatibleBrowsers: ["Safari Mobile", "Chrome Mobile", "Safari Desktop", "Chrome Desktop", "Edge Chromium Desktop", "Firefox (probably)", ],
 	},
+	{
+		title: "Corona Party!",
+		filename: "corona-party.html",
+		description: "A simple game leveraging the Audio API. Listen to the audio and try to figure out at which house a party is going on!",
+		author: "Justus Romijn",
+		github: "justusromijn",
+		compatibleBrowsers: ["Chrome Desktop", "Edge Chromium Desktop", "Firefox"],
+	},
 ];
