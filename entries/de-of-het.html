@@ -852,14 +852,14 @@
             // get right border position
             posX = this.board.clientWidth
 
-            this.onSwipe('de', this.currentCard)
+            this.onSwipe('het', this.currentCard)
           } else if (propX < -0.15 && e.direction == Hammer.DIRECTION_LEFT) {
 
             successful = true
             // get left border position
             posX = -(this.board.clientWidth + this.topCard.clientWidth)
 
-            this.onSwipe('het', this.currentCard)
+            this.onSwipe('de', this.currentCard)
           }
 
           if (successful) {
