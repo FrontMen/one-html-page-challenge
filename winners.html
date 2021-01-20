@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>One HTML Page Challenge - Frontmen</title>
+    <title>One HTML Page Winners!! - Frontmen</title>
 
     <!-- Icons -->
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -138,6 +138,12 @@
     />
 
     <style>
+
+      .curtainBody {
+        top: 0;
+        left: 0;
+      }
+
       .jumbotron {
         text-align: center;
         background-color: #ff5900;
@@ -145,7 +151,7 @@
       }
 
       .logo {
-        max-width: 70%;
+        max-width: 20%;
         filter: brightness(10);
       }
 
@@ -168,6 +174,8 @@
         background-size: 600% 600%;
         font-family: "VT323", monospace;
         font-size: 1.5em;
+        height: 100vh;
+        overflow-y: hidden;
 
         -webkit-animation: GradientAnim 40s ease infinite;
         -moz-animation: GradientAnim 40s ease infinite;
@@ -422,6 +430,7 @@
 
       .prizes {
         display: flex;
+        justify-content: center;
       }
 
       .prizes .card {
@@ -456,6 +465,11 @@
         }
       }
 
+      .container {
+        height: 100vh;
+        overflow-y: scroll;
+      }
+
       @media only screen and (max-width: 600px) {
         body.bg {
           padding: 0;
@@ -464,6 +478,7 @@
 
         .container {
           padding: 0;
+
         }
 
         .prizes {
@@ -492,10 +507,157 @@
         }
       }
 
+
+      .curtainContainer {
+        position: absolute;
+        display: flex;
+        top: -10%;
+        width: 100%;
+        height: 110%;
+        margin: auto;
+        transform-style: preserve-3d;
+        overflow: hidden;
+        transition: transform 6s ease;
+      }
+
+      .curtainContainer:nth-child(1) {
+        transform-origin: -120% top;
+        justify-content: flex-start;
+        transform: translatex(-5vw);
+      }
+
+      .curtainContainer:nth-child(2) {
+        transform-origin: 120% top;
+        justify-content: flex-end;
+        transform: translatex(15vw);
+      }
+
+      .rollLeft {
+        transform: translatex(-150vw) scaleX(0);
+      }
+
+      .rollRight {
+        transform: translatex(150vw) scaleX(0);
+      }
+
+
+      .unCurtain {
+        display: inline-block;
+        width: 15vw;
+        margin: 0;
+        padding: 0;
+        height: 120vh;
+        background-size: 100% 100%;
+        background: repeating-linear-gradient(to left, #dd3232 4vw, #911818 12vw, #ec8989 15vw);
+        transform-origin: 0 0%;
+        transform: rotate(3deg);
+        transition: transform 4s ease;
+        animation: swing 2s ease infinite;
+      }
+
+      @keyframes swing {
+        50% {
+          transform: rotate(-3deg);
+        }
+      }
+      .unCurtain:nth-child(2) {
+        margin-left: -10vw;
+        animation-delay: -0.1s;
+      }
+
+      .unCurtain:nth-child(3) {
+        margin-left: -10vw;
+        animation-delay: -0.2s;
+      }
+
+      .unCurtain:nth-child(4) {
+        margin-left: -10vw;
+        animation-delay: -0.3s;
+      }
+
+      .unCurtain:nth-child(5) {
+        margin-left: -10vw;
+        animation-delay: -0.4s;
+      }
+
+      .unCurtain:nth-child(6) {
+        margin-left: -10vw;
+        animation-delay: -0.5s;
+      }
+
+      .unCurtain:nth-child(7) {
+        margin-left: -10vw;
+        animation-delay: -0.6s;
+      }
+
+      .unCurtain:nth-child(8) {
+        margin-left: -10vw;
+        animation-delay: -0.7s;
+      }
+
+      .unCurtain:nth-child(9) {
+        margin-left: -10vw;
+        animation-delay: -0.8s;
+      }
+
+      .unCurtain:nth-child(10) {
+        margin-left: -10vw;
+        animation-delay: -0.9s;
+      }
+
+      .unCurtain:nth-child(11) {
+        margin-left: -10vw;
+        animation-delay: -1s;
+      }
+
+      .unCurtain:nth-child(12) {
+        width: 10vw;
+        background: repeating-linear-gradient(to left, #dd3232 4vw, #911818 8vw, #ec8989 10vw);
+        margin-left: -10vw;
+        animation-delay: -1.1s;
+      }
+
+      .curtainBody {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      .overlay {
+        display: block;
+        position: absolute;
+        color: white;
+        top: 0%;
+        left: 0%;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top, rgba(2, 2, 2, 0) 0vh, black 100vh);
+        transition: opacity 3s ease;
+      }
+
+      .curtainBody:hover .overlay {
+        opacity: 0;
+      }
+
+      #watch {
+        display: none;
+      }
+
+
+      #pillow {
+        display: none;
+      }
+
+
+      #book {
+        display: none;
+      }
+
     </style>
   </head>
   <body class="bg">
-    <main class="container">
+    <main class="container content">
       <section class="card">
         <div class="card-body">
           <section class="jumbotron">
@@ -507,53 +669,10 @@
               />
               <hr class="my-4" />
             </header>
-            <article>
-              <h2>Intro</h2>
-              <p>
-                Hey FrontPeepz! While we are still in this long and gruesome
-                Pandemic we thought it might be time to do something fun again.
-                So we came up with an awesome challenge! And with an awesome
-                challenge we should get an awesome prize as well. Therefore
-                the winner of this challenge will get an <b class="watch">Apple Watch!</b>
-              </p>
-
-              <p>
-                The goal is to create anything you want within 1 single html
-                file. Practice your skills with no assistance from libraries, no
-                separation of files, and no assistance of a modern framework.
-                <b>How creative can you be with such restrictions?</b>
-              </p>
-              <p>
-                More on the rules can be found <a href="https://github.com/FrontMen/one-html-page-challenge/blob/master/README.md#rules">here</a>!
-              </p>
-            </article>
-            <aside>
-              <a
-                class="btn btn-primary btn-lg"
-                href="https://github.com/FrontMen/one-html-page-challenge/blob/master/README.md#how-to-submit"
-                role="button"
-                >Submit an Entry</a
-              >
-            </aside>
-            <article>
-              <h2>Win!</h2>
-              <p>
-                Submit your contributions before <b>December 31st, 12p.m.</b> to
-                win prizes. The jury will score all submitted projects and
-                select a <b>winner</b>.
-              </p>
-              <h3>The Jury</h3>
-              <ul>
-                <li>Sylvia "Multi-threader" Blok</li>
-                <li>Matthias "Uren" de Boer</li>
-                <li>Jeroen "Use the (Sales)Force" Groothoff</li>
-              </ul>
-              </article>
               <article>
                 <h3>Prizes</h3>
-                <p>Be lucky, and win one of the carefully selected prizes!</p>
                 <div class="prizes">
-                  <div class="card" >
+                  <div id="watch" class="card" >
                     <img
                             src="./meta/apple_watch.jpg"
                             class="card-img-top"
@@ -561,10 +680,10 @@
                     />
                     <div class="card-body">
                       <h5 class="card-title text-orange">First</h5>
-                      <p class="card-text text-dark">Apple Watch SE, Space Gray Aluminum Case with Sport Band 40 mm</p>
+                      <p class="card-text text-dark">Pink vs Unknowns - Aliaksandr B.</p>
                     </div>
                   </div>
-                  <div class="card" >
+                  <div id="pillow" class="card" >
                     <img
                       src="./meta/ostrich_pillow.jpg"
                       class="card-img-top"
@@ -572,10 +691,10 @@
                     />
                     <div class="card-body">
                       <h5 class="card-title text-dark">Second</h5>
-                      <p class="card-text text-dark">Ostrich Original Napping Pillow, Immersive cozy experience</p>
+                      <p class="card-text text-dark">Corona Party! - Justus Romijn</p>
                     </div>
                   </div>
-                  <div class="card">
+                  <div id="book"  class="card">
                     <img
                       src="./meta/coders_book.jpg"
                       class="card-img-top"
@@ -583,198 +702,107 @@
                     />
                     <div class="card-body">
                       <h5 class="card-title text-dark">Third</h5>
-                      <p class="card-text text-dark">Coders: Who They Are, What They Think and How They Are Changing Our World</p>
+                      <p class="card-text text-dark">Amsterdam: avoid the bikes & return home! - Ioannis Smyrnios</p>
                     </div>
                   </div>
+
+                  <h2 id="ty">Thank You!!</h2>
                 </div>
               </article>
           </section>
-          <div class="input-group flex-nowrap">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Search"
-              aria-label="Search"
-              aria-describedby="addon-wrapping"
-              id="search"
-              oninput="searchOnInput()"
-            />
-            <div class="input-group-append">
-              <span class="input-group-text" id="addon-wrapping">
-                <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAA0dJREFUeJzt3THLlWUcx/Gf+gRKgzWGgkIJEg7qUA3ia/AFRFNjY0NDL0CksTfQO6jJFqXZTYi0dHAWBcEGl3ganPuF13U6l3fP5wNn/HP978P5wj3cz3MnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8u2OrF1jkbJLzq5cY8DzJg9VL8P/3TZLDDX5+/C++DP7Z8dULwNtMIFAIBAqBQCEQKAQChUCgEAgUAoFCIFAIBAqBQCEQKAQCxcHqBSbcSXJucPaHJBd2uMu+XE3yeGL+SpKXO9rlSNhyIOeSfDg4+27mfmirXMr4NSfJiV0tclS4xYJCIFAIBAqBQCEQKAQChUCgEAgUAoFCIFAIBAqBQCEQKFa+/uBsks8n5t/J66dyR/yS5OeJs1f5OMkXE/PPMv4E990k9ybO5g1dy9yrAD7a/8qb9yLj3/fXC/Zdzi0WFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQCASKg4VnP0/y08T81SSXBmf/SPLbxNmrfJDk04n520lODc4+mjiXBR4nORz83Fyw7y7cyPg1HyZ5b/8rb5tbLCgEAoVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQrPx7kFlXkpwYnP0yyYsd7rIvt5O8PzF/P8npwdlvk3w/cfYmbTmQlxOzBxn/oax0KnNhn874dZ+cOHez3GJBIRAoBAKFQKAQCBQCgUIgUAgECoFAIRAoBAKFQKAQCBTHVi+wyCdJrq9eYsCjzL0y4quMP5X7V5Izg7NPk9wanIVN+C7jr114uGDfnXCLBYVAoBAIFAKBQiBQCAQKgUAhECgEAoVAoBAIFAKBQiBQbPmfV7NfT5P8Pjj7JMnFibOfJHk1MQ9vtYsZf1T+MMln+1/5NbdYUAgECoFAIRAoBAKFQKAQCBQCgUIgUAgECoFAIRAoBAKFQKA4qq8/YL9OJrk8Mf9rkj93tAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADv3N1QfrvVma6YVAAAAAElFTkSuQmCC"
-                  alt=""
-                />
-              </span>
-            </div>
-          </div>
-          <div id="list"></div>
         </div>
       </section>
-      <p class="text-right">
-        Project inspired by
-        <a href="https://onehtmlpagechallenge.com" rel="nofollow"
-          >One HTML Page Challenge</a
-        >
-        by
-        <a
-          href="https://github.com/Metroxe/one-html-page-challenge"
-          rel="nofollow"
-          >Metroxe</a
-        >
-      </p>
     </main>
-    <br />
+    <div class="curtainBody">
+      <div id="leftCurtain" class="curtainContainer">
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+      </div>
+      <div id="rightCurtain" class="curtainContainer">
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+        <div class="unCurtain"></div>
+      </div>
+      <div class="overlay"></div>
+    </div>
 
-    <script src="./entries.js"></script>
     <script>
-      // sort based on title
-      const sortedEntries = entries.sort((a, b) =>
-        a.title > b.title ? 1 : b.title > a.title ? -1 : 0
-      );
 
-      // create initial list
-      searchOnInput();
+      function slideOpen() {
+        document.getElementsByClassName("curtainContainer")[0].style.transform =
+                "translatex(-150vw) ";
+        document.getElementsByClassName("curtainContainer")[1].style.transform =
+                "translatex(150vw)";
+      }
 
-      function searchOnInput() {
-        //get elements
-        const filter = document.getElementById("search").value.toLowerCase();
-        const list = document.getElementById("list");
+      function slideClose() {
+        document.getElementsByClassName("curtainContainer")[0].style.transform =
+                "translatex(-0vw) ";
+        document.getElementsByClassName("curtainContainer")[1].style.transform =
+                "translatex(0vw)";
+      }
 
-        // remove children
-        while (list.firstChild) {
-          list.removeChild(list.firstChild);
+      let open = false;
+      let number = 3;
+
+
+      document.querySelector('.curtainBody').addEventListener('click', ()=> {
+        if(open) {
+          slideClose();
+          open = false;
+        } else {
+          slideOpen();
+          open = true;
+
+          if(number === 3) {
+            document.querySelector('#book').style.display = 'block';
+            document.querySelector('#pillow').style.display = 'none';
+            document.querySelector('#watch').style.display = 'none';
+            document.querySelector('#ty').style.display = 'none';
+            --number;
+          } else if(number === 2) {
+            document.querySelector('#pillow').style.display = 'block';
+            document.querySelector('#book').style.display = 'none';
+            document.querySelector('#watch').style.display = 'none';
+            document.querySelector('#ty').style.display = 'none';
+            --number;
+          } else if(number === 1) {
+            document.querySelector('#watch').style.display = 'block';
+            document.querySelector('#book').style.display = 'none';
+            document.querySelector('#pillow').style.display = 'none';
+            document.querySelector('#ty').style.display = 'none';
+            --number;
+          }else if(number === 0) {
+            document.querySelector('#watch').style.display = 'none';
+            document.querySelector('#book').style.display = 'none';
+            document.querySelector('#pillow').style.display = 'none';
+            document.querySelector('#ty').style.display = 'block';
+          }
         }
 
-        // filter list
-        const filteredEntries = sortedEntries.filter((entry) => {
-          let key;
-          for (key in entry) {
-            if (entry.hasOwnProperty(key)) {
-              const prop = entry[key];
-              if (
-                typeof prop === "string" &&
-                prop.toLowerCase().includes(filter)
-              ) {
-                return true;
-              }
-            }
-          }
-          return false;
-        });
 
-        // create list
-        filteredEntries.forEach(
-          ({
-            title,
-            description,
-            filename,
-            github,
-            author,
-            compatibleBrowsers,
-            sponsored,
-          }) => {
-            // horizontal rule
-            const hr = document.createElement("hr");
-            hr.classList.add("my-3");
-            list.appendChild(hr);
 
-            const card = document.createElement("div");
-            card.className = "card";
-
-            const body = document.createElement("div");
-            body.className = "card-body";
-            card.appendChild(body);
-
-            // title
-            const cardTitle = document.createElement("h5");
-            const cardTitleNode = document.createTextNode(title);
-            cardTitle.className = "card-title";
-            cardTitle.appendChild(cardTitleNode);
-            body.appendChild(cardTitle);
-
-            // author
-            if (author) {
-              const authorSubtitle = document.createElement("h6");
-              const authorSubtitleNode = document.createTextNode(author);
-              authorSubtitle.className = "card-subtitle mb-2 text-muted";
-              authorSubtitle.appendChild(authorSubtitleNode);
-
-              // add an owner tag for myself
-              if (author.includes("Randynamic")) {
-                const ownerEmoji = document.createElement("a");
-                const ownerEmojiNode = document.createTextNode(" 👑️");
-                ownerEmoji.href = "https://github.com/Randynamic";
-                ownerEmoji.title = "Owner";
-                ownerEmoji.appendChild(ownerEmojiNode);
-                authorSubtitle.appendChild(ownerEmoji);
-              }
-
-              body.appendChild(authorSubtitle);
-            }
-
-            // description
-            if (description) {
-              const cardDescription = document.createElement("p");
-              const cardDescriptionNode = document.createTextNode(description);
-              cardDescription.className = "card-text";
-              cardDescription.appendChild(cardDescriptionNode);
-              body.appendChild(cardDescription);
-            }
-
-            // browser list
-            if (compatibleBrowsers) {
-              const browserList = document.createElement("p");
-              const browser = compatibleBrowsers.join(", ");
-              const browserNameNode = document.createTextNode(browser);
-              browserList.className = "card-text";
-              browserList.appendChild(browserNameNode);
-              body.appendChild(browserList);
-            }
-
-            // toolbar
-            const toolbar = document.createElement("div");
-            const group1 = document.createElement("div");
-            const group2 = document.createElement("div");
-            const group3 = document.createElement("div");
-            toolbar.className = "btn-toolbar";
-            group1.className = "btn-group mr-2";
-            group2.className = "btn-group mr-2";
-            group3.className = "btn-group mr-2";
-            toolbar.appendChild(group1);
-            toolbar.appendChild(group2);
-            toolbar.appendChild(group3);
-            body.appendChild(toolbar);
-
-            // HTML Link
-            const linkButton = document.createElement("a");
-            const linkButtonNode = document.createTextNode(filename);
-            linkButton.className = "btn btn-primary btn-md";
-            linkButton.href = `./entries/${filename}`;
-            linkButton.appendChild(linkButtonNode);
-            group1.appendChild(linkButton);
-
-            // Source Code Link
-            const sourceCodeButton = document.createElement("a");
-            const sourceCodeNode = document.createTextNode("Source");
-            sourceCodeButton.className = "btn btn-secondary btn-md";
-            sourceCodeButton.href = `https://github.com/FrontMen/one-html-page-challenge/blob/master/entries/${filename}`;
-            sourceCodeButton.appendChild(sourceCodeNode);
-            group2.appendChild(sourceCodeButton);
-
-            // github button
-            if (github) {
-              const githubButton = document.createElement("a");
-              const githubButtonNode = document.createTextNode("Github");
-              githubButton.className = "btn btn-primary btn-md";
-              githubButton.href = `https://github.com/${github}`;
-              githubButton.appendChild(githubButtonNode);
-              group3.appendChild(githubButton);
-            }
-            list.appendChild(card);
-          }
-        );
-      }
+      })
     </script>
+
   </body>
 </html>
