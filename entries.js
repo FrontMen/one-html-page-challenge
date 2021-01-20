@@ -15,14 +15,6 @@
 
 const entries = [
 	{
-		title: "Ant Colony (Example project by author)",
-		filename: "ant_colony.html",
-		description: "Simulation of an ant colony creating a never ending underground colony. The 'Q' represents a queen that can giver birth to ants 'A'. Food sources are represented by the numbers 9 - 1. (Currently only works in desktop Chrome)",
-		author: "Christopher Powroznik (Metroxe)",
-		github: "Metroxe",
-		compatibleBrowsers: ["Chrome Desktop"],
-	},
-	{
 		title: "Pink vs Unknowns",
 		filename: "pink-vs-unknowns.html",
 		description: "Pink vs Unknowns is a simulation where two sides have opposite contradictory missions.",
